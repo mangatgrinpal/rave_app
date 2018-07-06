@@ -37,6 +37,7 @@ gem 'react-rails'
 gem 'haml'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'jquery-rails'
+gem 'devise', '~> 4.4', '>= 4.4.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
