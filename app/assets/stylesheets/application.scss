@@ -13,3 +13,48 @@
  */
 
 @import "bootstrap";
+
+div#landing-background {
+	height: 550px;
+	color: #fff;
+	text-align: center;
+	padding: 220px 0px;
+	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/audience.jpeg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+div.col.events {
+	height: 524px;
+	.container {
+		height: 200px;
+		.card-deck {
+			width: 100%;
+			overflow-x: auto;
+			overflow-y: auto;
+			white-space: nowrap;
+			height: 350px;
+			margin: 50px 0px;
+			padding-left: inherit;
+			.card {
+				min-width: 230px;
+				max-width: 230px;
+				min-height: 230px;
+				max-height: 230px;
+				margin-bottom: 30px;
+				background-color: gray;
+				.card-body {
+					padding: 80px 0px;
+					text-align: center;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+div.instructions {
+	background-color: #000;
+	color: #fff;
+	height: 300px;
+}

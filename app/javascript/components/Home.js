@@ -16,11 +16,22 @@ class Home extends React.Component {
 		return (
 			<div>
 				<Nav/>
+				<br/>
 				<div className="row">
-					<div className="col-4">
-						<EventList events={this.props.events}/>
+					<div id="landing-background" className="container-fluid">
+						<h2>Locate friendly groups at your favorite events.
+						<br/>Sign up today!</h2>
+						<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
 					</div>
-					<h1>Hello World</h1>
+					<div className="col events">
+					<br/>
+						<h2>Upcoming Events</h2>
+						<EventList events={this.props.events}/>
+					<br/>
+					</div>					
+				</div>
+				<div className="instructions">
+						<h3> Wasssssup! </h3>
 				</div>
 			</div>
 		)

@@ -7,12 +7,10 @@ class Event extends React.Component {
 
 	render () {
 		return (
-			<div key={this.props.events.id} className="row justify-content-start">
-				<div className="col">
-					<p>{this.props.events.name}</p>
-				</div>
-				<div className="col">
-					<p>{this.props.events.location}</p>
+			<div className="card">
+				<div className="card-body">
+					<h5 className="card-title">{this.props.events.name}</h5>
+					<p className="card-text">{this.props.events.location}</p>
 				</div>
 			</div>
 		)

@@ -9,7 +9,6 @@ class EventList extends React.Component {
 	tableData() {
 		return this.props.events.map ((event)=> {
 			return (
-
 				<Event key={event.id} events={event}/>
 			)
 		});
@@ -18,18 +17,11 @@ class EventList extends React.Component {
 	render () {
 		return (
 			<div>
-				<div className="row justify-content-start">
-					<div className="col">
-						<h3>Event Name:</h3>
-						
-					</div>
-					<div className="col">
-						<h3>Location:</h3>
+				<div className="container">
+					<div className="card-deck">
+						{this.tableData()}
 					</div>
 				</div>
-				{this.tableData()}
-				
-
 			</div>
 		)
 	}
