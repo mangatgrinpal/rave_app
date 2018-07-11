@@ -31,7 +31,7 @@ class Home extends React.Component {
 					</div>					
 				</div>
 				<div className="instructions">
-						<h3> Wasssssup! </h3>
+						<h3> Wasssssup</h3>
 				</div>
 			</div>
 		)

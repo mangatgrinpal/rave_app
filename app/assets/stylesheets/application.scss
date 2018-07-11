@@ -24,17 +24,13 @@ div#landing-background {
 	background-repeat: no-repeat;
 }
 
-div.col.events {
-	height: 524px;
+.events {
 	.container {
-		height: 200px;
 		.card-deck {
 			width: 100%;
-			overflow-x: auto;
-			overflow-y: auto;
 			white-space: nowrap;
-			height: 350px;
-			margin: 50px 0px;
+			
+			margin: 90px 0px;
 			padding-left: inherit;
 			.card {
 				min-width: 230px;

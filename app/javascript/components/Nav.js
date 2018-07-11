@@ -10,7 +10,7 @@ class Nav extends React.Component {
 	render () {
 		return (
 			<div>
-				<nav className="navbar navbar-light bg-light justify-content-between">
+				<nav className="navbar navbar-light justify-content-between">
 				  <a className="navbar-brand">Rave</a>
 				  <a className="btn btn-outline-primary" href="/users/sign_up">Sign Up</a>
 				  <a className="btn btn-outline-primary" href="/users/sign_in">Log In</a>
