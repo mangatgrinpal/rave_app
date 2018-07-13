@@ -13,8 +13,14 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
 
-div#landing-background {
+.center {
+	text-align: center;
+	margin: auto;
+}
+
+#landing-background {
 	height: 550px;
 	color: #fff;
 	text-align: center;
@@ -28,15 +34,11 @@ div#landing-background {
 	.container {
 		.card-deck {
 			width: 100%;
-			white-space: nowrap;
+			margin: 90px 0px 0px 0px;
 			
-			margin: 90px 0px;
-			padding-left: inherit;
 			.card {
-				min-width: 230px;
-				max-width: 230px;
-				min-height: 230px;
-				max-height: 230px;
+				width: 230px;
+				height: 230px;
 				margin-bottom: 30px;
 				background-color: gray;
 				.card-body {
@@ -47,10 +49,15 @@ div#landing-background {
 			}
 		}
 	}
+	.fa-angle-down {
+		
+	}
 }
 
-div.instructions {
+#instructions {
 	background-color: #000;
 	color: #fff;
 	height: 300px;
 }
+
+

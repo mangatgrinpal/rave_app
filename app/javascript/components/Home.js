@@ -8,8 +8,6 @@ class Home extends React.Component {
 	}
 
 	
-	
-
 	render() {
 		console.log(this.props)
 
@@ -26,11 +24,12 @@ class Home extends React.Component {
 					<div className="col events">
 					<br/>
 						<h2>Upcoming Events</h2>
-						<EventList events={this.props.events}/>
+						<EventList events={this.props.events} eventIndexUrl={this.props.eventIndexUrl}/>
+
 					<br/>
 					</div>					
 				</div>
-				<div className="instructions">
+				<div id="instructions">
 						<h3> Wasssssup</h3>
 				</div>
 			</div>
