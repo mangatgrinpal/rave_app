@@ -16,6 +16,7 @@ class EventList extends React.Component {
 			return (
 				<div className="center">
 					<Event key={event.id} event={event}/>
+					<br/>
 				</div>
 			)
 		})
