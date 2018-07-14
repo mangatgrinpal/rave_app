@@ -15,7 +15,7 @@ class EventList extends React.Component {
 		var events = this.state.events.map ((event)=> {
 			return (
 				<div className="center">
-					<Event key={event.id} event={event}/>
+					<Event key={event.id} event={event} eventIndexUrl={this.props.eventIndexUrl}/>
 					<br/>
 				</div>
 			)
