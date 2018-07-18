@@ -11,7 +11,7 @@ class Event extends React.Component {
 	}
 
 	render () {
-		console.log(this.props.event.id)
+		
 
 		return (
 			<div className="card">

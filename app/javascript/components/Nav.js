@@ -1,24 +1,26 @@
 import React from "react"
+import LogInButtons from "./LogInButtons"
 
 class Nav extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
+	goHome() {
+		window.location.href = ("/");
+	}
+
 
 
 	render () {
+
 		return (
 			<div>
 				<nav className="navbar navbar-light justify-content-between">
-				  <a className="navbar-brand">Rave</a>
-				  <a className="btn btn-outline-primary" href="/users/sign_up">Sign Up</a>
-				  <a className="btn btn-outline-primary" href="/users/sign_in">Log In</a>
-				  <a className="btn btn-outline-primary" href="/users/sign_out">Log Out</a>
-				  <form className="form-inline">
-				    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-				    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				  </form>
+				  <a onClick={this.goHome} className="navbar-brand">Rave Meet</a>
+				  <div className="justify-content-end">
+					  <LogInButtons isLoggedIn={this.props.isLoggedIn}/>
+				  </div>
 				</nav>
 			</div>
 		);

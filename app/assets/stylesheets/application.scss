@@ -37,20 +37,17 @@
 			margin: 90px 0px 0px 0px;
 			
 			.card {
-				width: 230px;
-				height: 230px;
+				width: 180px;
+				height: 180px;
 				margin-bottom: 30px;
 				background-color: gray;
 				.card-body {
-					padding: 80px 0px;
+					padding: 65px 0px;
 					text-align: center;
 					color: white;
 				}
 			}
 		}
-	}
-	.fa-angle-down {
-		
 	}
 }
 
@@ -58,6 +55,18 @@
 	background-color: #000;
 	color: #fff;
 	height: 300px;
+}
+
+.show {
+	.card {
+		width: 460px;
+		height: 460px;
+		background-color: gray;
+		.card-body {
+			padding: 160px 0px;
+			color: white;
+		}
+	}
 }
 
 

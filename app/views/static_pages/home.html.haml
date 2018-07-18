@@ -1,7 +1,7 @@
 <!-- application.html.erb -->
 = javascript_pack_tag 'application'
 
-
+= react_component("Nav", {isLoggedIn:user_signed_in?})
 = react_component("Home", {events:@events, eventIndexUrl:events_path})
 
 = link_to "Sign Out", destroy_user_session_path, method: :delete

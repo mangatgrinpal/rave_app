@@ -1,8 +1,5 @@
-.container
-	.card
-		.card-body
-			.h5.card-title
-			= @event.name
-			.p.card-text
-			= @event.location
-			
+<!-- application.html.erb -->
+= javascript_pack_tag 'application'
+
+= react_component("Nav")
+= react_component("EventShow", {event:@event})
