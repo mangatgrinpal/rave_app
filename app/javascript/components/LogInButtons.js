@@ -16,10 +16,14 @@ class LogInButtons extends React.Component {
 		})
 	}
 
+	newEvent () {
+		window.location.replace("/events/new");
+	}
+
 
 
 	render () {
-		console.log(this.props)
+		
 
 		if (!this.props.isLoggedIn) {
 			return (
@@ -32,6 +36,7 @@ class LogInButtons extends React.Component {
 		else {
 			return (
 				<div>
+					<button onClick={this.newEvent} className="btn btn-outline-primary">New Event</button>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
 			)

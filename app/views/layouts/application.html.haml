@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Rave Meet
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: "alert alert-info"
+    <!-- application.html.erb -->
+    = javascript_pack_tag 'application'
+
+    = react_component("Nav", {isLoggedIn:user_signed_in?})
+    = yield

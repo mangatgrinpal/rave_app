@@ -7,7 +7,7 @@ class EventList extends React.Component {
 		this.getMoreEvents = this.getMoreEvents.bind(this)
 		this.state = {
 			events: this.props.events,
-			page: 1
+			page: 0
 		}
 	}
 
@@ -21,7 +21,7 @@ class EventList extends React.Component {
 			)
 		})
 
-			if (this.state.events.length % 4 === 0)
+			if (this.state.events.length % 3 === 0)
 				return (
 					<div className="card-deck">
 						{events}
@@ -48,6 +48,36 @@ class EventList extends React.Component {
 	}
 
 	render () {
+
+		if (this.state.page === 0) {
+			return (
+				<div className="container center">
+					<div className="row">
+						<div className="col">
+							<div className="card-deck">
+								<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
+									<div className="card-body">
+										<div className="card-title">
+											SF
+										</div>
+									</div>
+								</div></a>
+								<br/>
+								<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
+									<div className="card-body">
+										<div className="card-title">
+											LA
+										</div>
+									</div>
+								</div></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			)
+		} else {
+
+
 		return (
 			<div>
 				<div className="container center">
@@ -55,7 +85,7 @@ class EventList extends React.Component {
 					<a onClick={this.getMoreEvents} href="javascript:void(0)" ><i className="fa fa-5x fa-angle-down"/></a>
 				</div>
 			</div>
-		)
+		)}
 	}
 }
 

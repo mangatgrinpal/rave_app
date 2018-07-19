@@ -15,9 +15,9 @@ class Nav extends React.Component {
 	render () {
 
 		return (
-			<div>
+			<div className="global-nav">
 				<nav className="navbar navbar-light justify-content-between">
-				  <a onClick={this.goHome} className="navbar-brand">Rave Meet</a>
+				  <a onClick={this.goHome} href="javascript:void(0)" className="navbar-brand">Rave Meet</a>
 				  <div className="justify-content-end">
 					  <LogInButtons isLoggedIn={this.props.isLoggedIn}/>
 				  </div>
