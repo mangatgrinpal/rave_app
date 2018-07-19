@@ -17,7 +17,7 @@ class Event extends React.Component {
 			<div className="card">
 				<a onClick={this.goToEvent} href="javascript:void(0)" ><div className="card-body">
 					<h5 className="card-title">{this.props.event.name}</h5>
-					<p className="card-text">{this.props.event.location}</p>
+					<p className="card-text">{this.props.event.venue}</p>
 				</div></a>
 			</div>
 

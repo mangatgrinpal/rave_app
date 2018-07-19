@@ -22,6 +22,7 @@ class EventShow extends React.Component {
 					</div>
 					<div className="col details">
 						<h5>{this.props.event.name}</h5>
+						<p>{this.props.event.venue}</p>
 						<p>{this.props.event.location}</p>
 					</div>
 				</div>

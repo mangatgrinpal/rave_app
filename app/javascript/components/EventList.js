@@ -54,26 +54,25 @@ class EventList extends React.Component {
 				<div className="container center">
 					<div className="row">
 						<div className="col">
-							<div className="card-deck">
-								<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
-									<div className="card-body">
-										<div className="card-title">
-											SF
-										</div>
+							<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
+								<div className="card-body">
+									<div className="card-title">
+										SF
 									</div>
-								</div></a>
-								<br/>
-								<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
-									<div className="card-body">
-										<div className="card-title">
-											LA
-										</div>
+								</div>
+							</div></a>
+							<br/>
+							<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
+								<div className="card-body">
+									<div className="card-title">
+										LA
 									</div>
-								</div></a>
-							</div>
+								</div>
+							</div></a>
 						</div>
 					</div>
 				</div>
+				
 			)
 		} else {
 
