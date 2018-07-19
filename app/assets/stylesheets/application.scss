@@ -73,12 +73,19 @@
 
 .show {
 	.card {
-		width: 460px;
-		height: 460px;
+		width: 550px;
+		height: 480px;
 		background-color: gray;
+		border-radius: 10px;
 		.card-body {
-			padding: 160px 0px;
-			color: white;
+			color: black;
+			.date {
+				background-color: #fff;
+				border: 1px solid #007bff;
+				border-radius: 10px;
+				width: fit-content;
+				padding: 0px 10px;
+			}
 		}
 	}
 }

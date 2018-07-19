@@ -10,7 +10,10 @@
 
   %body
     - flash.each do |name, msg|
-      = content_tag :div, msg, class: "alert alert-info"
+      .alert{ :class => "alert-#{name}" }
+        %button.close{ :data => { :dismiss => "alert"} } x
+        = msg
+
     <!-- application.html.erb -->
     = javascript_pack_tag 'application'
 

@@ -1,4 +1,5 @@
 import React from "react"
+import EventMap from "./EventMap"
 
 class EventShow extends React.Component {
 	constructor(props) {
@@ -16,7 +17,10 @@ class EventShow extends React.Component {
 					<div className="col show">
 						<div className="card">
 							<div className="card-body">
-								<h5> hello </h5>
+								<div className="card-title date">
+									<h5>{this.props.monthDate}</h5>
+									<h5>{this.props.year}</h5>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -26,6 +30,7 @@ class EventShow extends React.Component {
 						<p>{this.props.event.location}</p>
 					</div>
 				</div>
+				<EventMap />
 				
 			</div>
 		)
