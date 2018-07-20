@@ -5,13 +5,21 @@ class EventForm extends React.Component {
 		super(props);
 	}
 
+	datePicker() {
+		$(function() {
+    	$( "#datepicker" ).datepicker();
+    });
+	}
+	
+ 
+
 	render () {
 		return (
 			<div id="form">
 				<form>
 	        <label>
 	        	Date:<br/>
-	        	<input type="text" name="date" placeholder="YYYY-MM-DD"/>
+	        	<input onClick={this.datePicker} type="text" id="datepicker" name="date"/>
 	        	<br/>
 	        	Name:<br/>
 	        	<input type="text" name="name" placeholder="Event Name" />
