@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Rave Meet
+    %title RaveMeet
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -17,5 +17,5 @@
     <!-- application.html.erb -->
     = javascript_pack_tag 'application'
 
-    = react_component("Nav", {isLoggedIn:user_signed_in?})
+    = react_component("Nav", {isLoggedIn:user_signed_in?, currentUser:current_user, rootPath:root_path})
     = yield

@@ -1,4 +1,5 @@
 import React from "react"
+import EventModal from "./EventModal"
 
 class LogInButtons extends React.Component {
 	constructor(props){
@@ -7,22 +8,24 @@ class LogInButtons extends React.Component {
 	}
 
 	logOut () {
-		$.ajax("users/sign_out", {
+		$.ajax("/users/sign_out", {
 				dataType: "JSON",
 				type: "DELETE",
 				success: ()=> {
-					window.location.replace("/");
+					window.location.replace("/")
+					alert("You've been logged out")
 				}
-		})
+		});
 	}
 
 	newEvent () {
-		window.location.replace("/events/new");
+		
 	}
 
 
 
 	render () {
+		console.log(this.props)
 		
 
 		if (!this.props.isLoggedIn) {
@@ -33,10 +36,14 @@ class LogInButtons extends React.Component {
 				</div>
 			)
 		}
+		
 		else {
 			return (
 				<div>
-					<button onClick={this.newEvent} className="btn btn-outline-primary">New Event</button>
+					{/* Button trigger modal */}
+					<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">New RaveMeet</button>
+					{/* Modal */}
+					<EventModal/>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
 			)
