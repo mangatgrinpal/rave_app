@@ -4,7 +4,6 @@ import EventModal from "./EventModal"
 class LogInButtons extends React.Component {
 	constructor(props){
 		super(props);
-
 	}
 
 	logOut () {
@@ -18,7 +17,7 @@ class LogInButtons extends React.Component {
 		});
 	}
 
-	newEvent () {
+	newMeetup () {
 		
 	}
 
@@ -27,17 +26,7 @@ class LogInButtons extends React.Component {
 	render () {
 		console.log(this.props)
 		
-
-		if (!this.props.isLoggedIn) {
-			return (
-				<div>
-					<a className="btn btn-outline-primary" href="/users/sign_up">Sign Up</a>
-				  <a className="btn btn-outline-primary" href="/users/sign_in">Log In</a>
-				</div>
-			)
-		}
-		
-		else {
+		if (this.props.isLoggedIn) {
 			return (
 				<div>
 					{/* Button trigger modal */}
@@ -45,6 +34,14 @@ class LogInButtons extends React.Component {
 					{/* Modal */}
 					<EventModal/>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
+				</div>
+			)
+		}
+		else {
+			return (
+				<div>
+					<a className="btn btn-outline-primary" href="/users/sign_up">Sign Up</a>
+				  <a className="btn btn-outline-primary" href="/users/sign_in">Log In</a>
 				</div>
 			)
 		}

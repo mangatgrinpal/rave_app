@@ -7,7 +7,7 @@ class EventForm extends React.Component {
 
 	datePicker() {
 		$(function() {
-    	$( "#datepicker" ).datepicker();
+    	$( "#datepicker" ).datepicker()
     });
 	}
 	
@@ -18,14 +18,14 @@ class EventForm extends React.Component {
 			<div id="form">
 				<form>
 	        <label>
-	        	Date:<br/>
-	        	<input onClick={this.datePicker} type="text" id="datepicker" name="date"/>
-	        	<br/>
 	        	Name:<br/>
 	        	<input type="text" name="name" placeholder="Event Name" />
 	        	<br/>
 	        	Venue:<br/>
 	        	<input type="text" name="venue" placeholder="Venue"/>
+	        	<br/>
+	        	Date:<br/>
+	        	<input onClick={this.datePicker} type="text" id="datepicker" name="date"/>
 	        	<br/>
 	        	Location:<br/>
 	        	<select name="location">

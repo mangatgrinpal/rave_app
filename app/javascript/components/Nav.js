@@ -19,7 +19,7 @@ class Nav extends React.Component {
 				<nav className="navbar navbar-light justify-content-between">
 				  <a onClick={this.goHome} href="javascript:void(0)" className="navbar-brand">RaveMeet</a>
 				  <div className="justify-content-end">
-					  <LogInButtons isLoggedIn={this.props.isLoggedIn} rootPath={this.props.rootPath}/>
+					  <LogInButtons isLoggedIn={this.props.isLoggedIn} rootPath={this.props.rootPath} currentUser={this.props.currentUser}/>
 				  </div>
 				</nav>
 			</div>
