@@ -11,15 +11,14 @@ class Event extends React.Component {
 	}
 
 	render () {
-		
-
 		return (
-			<div className="card">
-				<a onClick={this.goToEvent} href="javascript:void(0)" ><div className="card-body">
+			<a onClick={this.goToEvent} href="javascript:void(0)" ><div className="card">
+				<img className="card-img-top" src="http://fis-cal.com/wp-content/uploads/2013/10/EVENTS.png" alt="Card Image Cap" />
+				<div className="card-body">
 					<h5 className="card-title">{this.props.event.name}</h5>
 					<p className="card-text">{this.props.event.venue}</p>
-				</div></a>
-			</div>
+				</div>
+			</div></a>
 
 		)
 	};

@@ -12,7 +12,7 @@ class LogInButtons extends React.Component {
 				type: "DELETE",
 				success: ()=> {
 					window.location.replace("/")
-					alert("You've been logged out")
+					alert("You've been successfully logged out.")
 				}
 		});
 	}
@@ -24,7 +24,6 @@ class LogInButtons extends React.Component {
 
 
 	render () {
-		console.log(this.props)
 		
 		if (this.props.isLoggedIn) {
 			return (

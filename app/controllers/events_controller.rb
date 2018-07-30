@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
 	before_action :find_event, only: [:show]
 
+
 	def index
-		page = params[:page].to_i
-		render json: {events: Event.first(page * 3)}
+		render json: {events: current_events, isAll: isAll?, friscoEvents: frisco_events}
 	end
 
 	def show
@@ -18,11 +18,24 @@ class EventsController < ApplicationController
 	
 	private
 
-		def find_event
-			@event = Event.find(params[:id])
-		end
+	def current_events
+		page = params[:page].to_i
+		Event.first(page * 3)
+	end
 
-		def event_params
-			params.require(:event).permit(:name, :location, :date, :venue)
-		end
+	def isAll?
+		current_events.count >= Event.count ? false : true
+	end
+
+	def frisco_events
+		Event.where(location:"San Francisco")
+	end
+
+	def find_event
+		@event = Event.find(params[:id])
+	end
+
+	def event_params
+		params.require(:event).permit(:name, :location, :date, :venue)
+	end
 end

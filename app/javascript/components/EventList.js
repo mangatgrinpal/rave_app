@@ -1,5 +1,6 @@
 import React from "react"
 import Event from "./Event"
+import ArrowButton from "./ArrowButton"
 
 class EventList extends React.Component {
 	constructor(props) {
@@ -7,32 +8,35 @@ class EventList extends React.Component {
 		this.getMoreEvents = this.getMoreEvents.bind(this)
 		this.state = {
 			events: this.props.events,
-			page: 0
+			page: 1,
+			showMore: true
 		}
 	}
 
 	tableData() {
 		var events = this.state.events.map ((event)=> {
 			return (
-				<div className="center">
-					<Event key={event.id} event={event} eventIndexUrl={this.props.eventIndexUrl}/>
+				<div className="center" key={event.id} >
+					<Event event={event} eventIndexUrl={this.props.eventIndexUrl}/>
 					<br/>
 				</div>
 			)
 		})
 
-			if (this.state.events.length % 3 === 0)
+			if (this.state.events.length % 3 === 0) {
 				return (
 					<div className="card-deck">
 						{events}
 					</div>
 				)
-			else
+			}
+			else {
 				return (
 					<div className="card-deck">
 						{events}
 					</div>
 				)
+			}
 	}
 
 
@@ -42,49 +46,22 @@ class EventList extends React.Component {
 				dataType: "JSON",
 				type: "GET",
 				success: (data) => {
-					this.setState({events: data.events })
+					this.setState({events: data.events,  showMore: data.isAll})
 				}
 		})
 	}
 
 	render () {
 
-		if (this.state.page === 0) {
-			return (
-				<div className="container center">
-					<div className="row">
-						<div className="col">
-							<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
-								<div className="card-body">
-									<div className="card-title">
-										SF
-									</div>
-								</div>
-							</div></a>
-							<br/>
-							<a onClick={this.getMoreEvents} href="javascript:void(0)" ><div className="card">
-								<div className="card-body">
-									<div className="card-title">
-										LA
-									</div>
-								</div>
-							</div></a>
-						</div>
-					</div>
-				</div>
-				
-			)
-		} else {
-
-
 		return (
 			<div>
 				<div className="container center">
 					{this.tableData()}
-					<a onClick={this.getMoreEvents} href="javascript:void(0)" ><i className="fa fa-5x fa-angle-down"/></a>
+					<a onClick={this.getMoreEvents} href="javascript:void(0)" >
+					<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>
 				</div>
 			</div>
-		)}
+		)
 	}
 }
 

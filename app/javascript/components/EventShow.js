@@ -10,7 +10,7 @@ class EventShow extends React.Component {
 		console.log(this.props)
 
 		return (
-			<div className="container">
+			<div className="container event">
 				<br/>
 				<br/>
 				<div className="row">
