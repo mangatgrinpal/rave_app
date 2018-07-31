@@ -10,7 +10,7 @@ class EventList extends React.Component {
 		this.state = {
 			events: this.props.events,
 			page: 1,
-			showMore: true,
+			showMore: '',
 			location: "San Francisco"
 		}
 	}
@@ -62,8 +62,8 @@ class EventList extends React.Component {
 		return (
 			<div>
 				<div className="container center">
-					<button onClick={this.changeLocation} value="San Francisco">SF</button>
-					<button onClick={this.changeLocation} value="Los Angeles">LA</button>
+					<button onClick={this.changeLocation} className="btn btn-primary" value="San Francisco">San Francisco</button>
+					<button onClick={this.changeLocation} className="btn btn-primary" value="Los Angeles">Los Angeles</button>
 					{this.tableData()}
 					<a onClick={this.getMoreEvents} href="javascript:void(0)" >
 					<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>
