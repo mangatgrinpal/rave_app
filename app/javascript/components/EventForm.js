@@ -7,7 +7,7 @@ class EventForm extends React.Component {
 			date: '',
 			name: '',
 			venue: '',
-			location: ''
+			location: 'San Francisco'
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);

@@ -6,10 +6,12 @@ class EventList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.getMoreEvents = this.getMoreEvents.bind(this)
+		this.changeLocation = this.changeLocation.bind(this)
 		this.state = {
 			events: this.props.events,
 			page: 1,
-			showMore: true
+			showMore: true,
+			location: "San Francisco"
 		}
 	}
 
@@ -42,7 +44,7 @@ class EventList extends React.Component {
 
 	getMoreEvents() {
 		this.setState({page: this.state.page += 1})
-		$.ajax(this.props.eventIndexUrl + "?page=" + this.state.page, {
+		$.ajax(this.props.eventIndexUrl + "?page=" + this.state.page + "&location=" + this.state.location, {
 				dataType: "JSON",
 				type: "GET",
 				success: (data) => {
@@ -51,11 +53,17 @@ class EventList extends React.Component {
 		})
 	}
 
+	changeLocation(evt) {
+		this.setState({location: evt.target.value, page: 0}, ()=>{this.getMoreEvents()})
+	}
+
 	render () {
 
 		return (
 			<div>
 				<div className="container center">
+					<button onClick={this.changeLocation} value="San Francisco">SF</button>
+					<button onClick={this.changeLocation} value="Los Angeles">LA</button>
 					{this.tableData()}
 					<a onClick={this.getMoreEvents} href="javascript:void(0)" >
 					<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>

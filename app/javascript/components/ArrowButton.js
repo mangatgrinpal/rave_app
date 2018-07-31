@@ -8,9 +8,7 @@ class ArrowButton extends React.Component {
 	render () {	
 		if (this.props.showMore) {
 			return (
-				<div>
-					<i onClick={this.props.getMoreEvents} className="fa fa-5x fa-angle-down"/>
-				</div>
+				<i onClick={this.props.getMoreEvents} className="fa fa-5x fa-angle-down"/>
 			)}
 		else {
 			return (

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
 
 	def index
-		render json: {events: current_events, isAll: isAll?, friscoEvents: frisco_events}
+		render json: {events: current_events, isAll: isAll?}
 	end
 
 	def show
@@ -20,19 +20,19 @@ class EventsController < ApplicationController
 
 	def current_events
 		page = params[:page].to_i
-		Event.first(page * 3)
+		located_events.first(page * 3)
 	end
 
 	def isAll?
-		current_events.count >= Event.count ? false : true
-	end
-
-	def frisco_events
-		Event.where(location:"San Francisco")
+		current_events.count >= located_events.count ? false : true
 	end
 
 	def find_event
 		@event = Event.find(params[:id])
+	end
+
+	def located_events
+		Event.where(location: params[:location])
 	end
 
 	def event_params
