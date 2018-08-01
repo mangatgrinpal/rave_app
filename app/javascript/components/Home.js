@@ -30,7 +30,7 @@ class Home extends React.Component {
 				</div>
 				<div id="instructions" className="row">
 					<div className="col">
-						<h3> Wasssssup</h3>
+						<h3>Hello World</h3>
 					</div>
 				</div>
 			</div>

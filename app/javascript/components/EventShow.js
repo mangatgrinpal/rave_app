@@ -16,10 +16,12 @@ class EventShow extends React.Component {
 				<div className="row">
 					<div className="col show">
 						<div className="card">
-							<div className="card-body">
+							<div className="card-body" style={{backgroundImage: "url(" + this.props.event.poster +")"}}>
 								<div className="card-title date">
-									<h5>{this.props.monthDate}</h5>
-									<h5>{this.props.year}</h5>
+									<div className="center">
+										<h5>{this.props.monthDate}</h5>
+										<h5>{this.props.year}</h5>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -27,9 +29,10 @@ class EventShow extends React.Component {
 					<div className="col details">
 						<h5>{this.props.event.name}</h5>
 						<p>{this.props.event.venue}</p>
-						<p>{this.props.event.location}</p>
+						<p>{this.props.event.location}, CA</p>
 					</div>
 				</div>
+				<br/>
 				<EventMap />
 				
 			</div>

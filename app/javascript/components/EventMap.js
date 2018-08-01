@@ -8,8 +8,10 @@ class EventMap extends React.Component {
 	render () {
 		return (
 			<div className="container">
-				<div className ="row">
-					<h3>Hello World!</h3>
+				<div className="row">
+					<div className="col">
+						<button>Hello World!</button>
+					</div>
 				</div>
 			</div>
 		)

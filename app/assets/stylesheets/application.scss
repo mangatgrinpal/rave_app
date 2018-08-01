@@ -53,6 +53,7 @@
 
 				.card-img-top {
 					height: 160px;
+					background-size: contain;
 				}
 				.card-body {
 					height: 80px;
@@ -86,8 +87,8 @@
 	.card {
 		width: 550px;
 		height: 480px;
-		background-color: gray;
 		border-radius: 10px;
+		background-size: cover;
 		.card-body {
 			color: black;
 			.date {
