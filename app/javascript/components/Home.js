@@ -9,19 +9,17 @@ class Home extends React.Component {
 
 	
 	render() {
-		
-
 		return (
-			<div>
-				<div className="row">
-					<div id="landing-background" className="container-fluid">
+			<div className="container-fluid">
+				<div className="row" id="landing-background">
+					<div className="col">
 						<h2>Locate friendly groups at your favorite events.
 						<br/>Sign up today!</h2>
 						<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
 					</div>
 				</div>
 				<div className="row">
-					<div className="col events">
+					<div className="col events">	
 					<br/>
 						<h2>Upcoming Events</h2>
 						<EventList key={event.id} 

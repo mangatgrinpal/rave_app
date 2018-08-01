@@ -17,21 +17,16 @@ class LogInButtons extends React.Component {
 		});
 	}
 
-	newMeetup () {
-		
-	}
-
-
 
 	render () {
 		
-		if (this.props.isLoggedIn) {
+		if (this.props.currentUser.admin) {
 			return (
 				<div>
 					{/* Button trigger modal */}
 					<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">New RaveMeet</button>
 					{/* Modal */}
-					<EventModal/>
+					<EventModal eventIndexUrl={this.props.eventIndexUrl}/>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
 			)

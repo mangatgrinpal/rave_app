@@ -17,13 +17,7 @@ class EventModal extends React.Component {
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
-			      <div className="modal-body">
-			        <EventForm />
-			      </div>
-			      <div className="modal-footer">
-			        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="button" className="btn btn-primary">Submit</button>
-			      </div>
+			      <EventForm eventIndexUrl={this.props.eventIndexUrl}/>
 			    </div>
 			  </div>
 			</div>

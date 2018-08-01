@@ -10,8 +10,8 @@ class EventList extends React.Component {
 		this.state = {
 			events: this.props.events,
 			page: 1,
-			showMore: '',
-			location: "San Francisco"
+			showMore: true,
+			location: 'San Francisco'
 		}
 	}
 

@@ -18,5 +18,5 @@
     = javascript_pack_tag 'application'
  
 
-    = react_component("Nav", {isLoggedIn:user_signed_in?, currentUser:current_user, rootPath:root_path})
+    = react_component("Nav", {isLoggedIn:user_signed_in?, currentUser:current_user, rootPath:root_path, eventIndexUrl:events_path})
     = yield
