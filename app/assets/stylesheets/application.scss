@@ -85,7 +85,6 @@
 
 .show {
 	.card {
-		width: 550px;
 		height: 480px;
 		border-radius: 10px;
 		background-size: cover;
@@ -99,6 +98,23 @@
 				padding: 0px 10px;
 			}
 		}
+	}
+}
+
+.details {
+	height: 480px;
+	.info-main {
+		height: 120px;
+	}
+	.description {
+		height: 300px;
+		overflow: scroll;
+	}
+}
+
+.venue-map {
+	img {
+		width: 100%;
 	}
 }
 
