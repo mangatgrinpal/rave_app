@@ -1,6 +1,7 @@
 import React from "react"
 import Nav from "./Nav"
 import EventList from "./EventList"
+import HomeLanding from "./HomeLanding"
 
 class Home extends React.Component {
 	constructor(props) {
@@ -11,13 +12,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="container-fluid">
-				<div className="row" id="landing-background">
-					<div className="col">
-						<h2>Locate friendly groups at your favorite events.
-						<br/>Sign up today!</h2>
-						<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
-					</div>
-				</div>
+				<HomeLanding isLoggedIn={this.props.isLoggedIn}/>
 				<div className="row">
 					<div className="col events">	
 					<br/>

@@ -20,14 +20,20 @@ class LogInButtons extends React.Component {
 
 	render () {
 		
-		if (this.props.currentUser.admin) {
+		if (this.props.isLoggedIn) {
+			return (
+				<div>
+					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
+				</div>
+			)
+		}
+		else if (this.props.isLoggedIn && this.props.currentUser.admin) {
 			return (
 				<div>
 					{/* Button trigger modal */}
 					<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">New RaveMeet</button>
 					{/* Modal */}
 					<EventModal eventIndexUrl={this.props.eventIndexUrl}/>
-					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
 			)
 		}

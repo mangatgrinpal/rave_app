@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
+		@meetups = @event.meetups
 	end
 
 	def new
