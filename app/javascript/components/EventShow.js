@@ -24,7 +24,7 @@ class EventShow extends React.Component {
 				<br/>
 				<br/>
 				<div className="row">
-					<div className="col show">
+					<div className="col-6 show">
 						<div className="card">
 							<div className="card-body" style={{backgroundImage: "url(" + this.props.event.poster +")"}}>
 								<div className="card-title date">
@@ -50,17 +50,15 @@ class EventShow extends React.Component {
 							</div>
 						</div>
 						<br/>
-						<div className="row meetuphandler">
-							<div className="col center">
-								<button onClick={this.toggleHidden} className="btn btn-primary">{this.state.isHidden? 'Hide':'See'} meetups my guy</button>
-							</div>
-						</div>
 					</div>
 				</div>
 				<br/>
+				<div className="center">
+					{!this.state.isHidden && <button onClick={this.toggleHidden} className="btn btn-outline-primary">Check to see who's meeting up at this event</button>}
+				</div>
 				{this.state.isHidden && <EventMeets meetups={this.props.meetups}/>}
 				<br/>
-				<EventMap event={this.props.event}/>
+				{this.state.isHidden && <EventMap event={this.props.event}/>}
 			</div>
 		)
 	};

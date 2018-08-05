@@ -16,7 +16,6 @@ class Home extends React.Component {
 				<div className="row">
 					<div className="col events">	
 					<br/>
-						<h2>Upcoming Events</h2>
 						<EventList key={event.id} 
 										events={this.props.events} 
 										eventIndexUrl={this.props.eventIndexUrl}/>

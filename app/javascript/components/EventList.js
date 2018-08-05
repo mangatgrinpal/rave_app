@@ -11,7 +11,8 @@ class EventList extends React.Component {
 			events: this.props.events,
 			page: 1,
 			showMore: true,
-			location: 'San Francisco'
+			location: 'San Francisco',
+			isHidden: false
 		}
 	}
 
@@ -54,7 +55,7 @@ class EventList extends React.Component {
 	}
 
 	changeLocation(evt) {
-		this.setState({location: evt.target.value, page: 0}, ()=>{this.getMoreEvents()})
+		this.setState({location: evt.target.value, page: 0, isHidden: !this.state.isHidden}, ()=>{this.getMoreEvents()})
 	}
 
 	render () {
@@ -62,11 +63,23 @@ class EventList extends React.Component {
 		return (
 			<div>
 				<div className="container center">
-					<button onClick={this.changeLocation} className="btn btn-primary" value="San Francisco">San Francisco</button>
-					<button onClick={this.changeLocation} className="btn btn-primary" value="Los Angeles">Los Angeles</button>
-					{this.tableData()}
-					<a onClick={this.getMoreEvents} href="javascript:void(0)" >
-					<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>
+					<div className="row">
+						<div className="col event-selector">
+							{!this.state.isHidden && 
+							<div> 
+							<h3>Choose a city to get started.</h3>
+							<br/>
+							<button onClick={this.changeLocation} className="btn btn-primary" value="San Francisco">San Francisco</button>
+							<button onClick={this.changeLocation} className="btn btn-primary" value="Los Angeles">Los Angeles</button></div>}
+							{this.state.isHidden && 
+							<div>
+							<h3>Upcoming events in {this.state.location}</h3>
+							{this.tableData()}
+							<a onClick={this.getMoreEvents} href="javascript:void(0)" >
+							<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>
+							</div>}
+						</div>
+					</div>
 				</div>
 			</div>
 		)

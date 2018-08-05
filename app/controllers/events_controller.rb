@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 	before_action :find_event, only: [:show]
+	before_action :find_meetup, only: [:show]
 
 
 	def index
@@ -7,7 +8,8 @@ class EventsController < ApplicationController
 	end
 
 	def show
-		@meetups = @event.meetups
+		@meetups = ActiveModel::Serializer::ArraySerializer.new(@event.meetups, each_serializer: MeetupSerializer)
+		
 	end
 
 	def new
@@ -37,6 +39,10 @@ class EventsController < ApplicationController
 
 	def find_event
 		@event = Event.find(params[:id])
+	end
+
+	def find_meetup
+		@meetup = Meetup.find(params[:id])
 	end
 
 	def located_events

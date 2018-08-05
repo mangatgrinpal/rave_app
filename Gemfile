@@ -23,6 +23,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'jquery-ui-rails'
 gem 'figaro'
+gem 'active_model_serializers'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
