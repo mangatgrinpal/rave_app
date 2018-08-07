@@ -1,14 +1,16 @@
 import React from "react"
+import Meetup from "./Meetup"
 
 class EventMeets extends React.Component {
 	constructor(props) {
 		super(props);
-		
+		this.meetUpInfo = this.meetUpInfo.bind(this)
 		this.state = {
 			meetups: this.props.meetups
 		}
 	}
 	meetUpInfo () {
+	
 		$.ajax("/meetups/" + this.state.meetups.id, {
 				type: "GET",
 				dataType: "JSON",
@@ -21,13 +23,8 @@ class EventMeets extends React.Component {
 	meetUpData () {
 		var meetups = this.state.meetups.map ((meetup) => {
 			return (
-				<div key={meetup.id} className="row meetup-list">
-					<div className="col">
-						<a href="javascript:void(0)">{meetup.name}</a>
-					</div>
-					<div className="col">
-						{meetup.user.email}
-					</div>
+				<div key={meetup.id}>
+					<Meetup meetUpInfo={this.meetUpInfo} meetup={meetup} />
 				</div>
 			)
 		})

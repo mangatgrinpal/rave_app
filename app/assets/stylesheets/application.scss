@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require jquery-ui/datepicker
  */
 
 @import "bootstrap";
@@ -32,8 +31,10 @@
 	height: 440px;
 	color: #fff;
 	text-align: center;
-	padding: 220px 0px;
+	padding: 160px 0px;
 	background-image: url("audience.jpeg");
+	/* add this prefix to images after s3 bucket fixed -> https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/ */
+	background-attachment: fixed;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
@@ -67,30 +68,43 @@
 				}
 			}
 		}
-.event-selector {
-	height: 100%;
-	.cities {
-		cursor: pointer;
-		color: #fff;
-		
-		min-height: 330px;
-		.san-francisco-pic {
-			background-image: url("friscoimage.jpeg");
-			background-size: cover;
-		}
-		.los-angeles-pic {
-			background-image: url("losangelesimage.jpeg");
-			background-size: cover;
-		}
 	}
-}
-		a:hover {
-			text-decoration: none;
-		}
-		.fa-angle-down {
-			padding-bottom: 30px;
-    	margin-top: -30px;
-		}
+	.event-selector {
+			
+			.cities {
+				p {
+					margin-top: 90px;
+					font-size: 3rem;
+				}
+				cursor: pointer;
+				color: #fff;
+				min-height: 330px;
+				.san-francisco-pic {
+					background-image: url("friscoimage.jpeg");
+					background-size: cover;
+					opacity: 0.75;
+				}
+				/* add this prefix to images after s3 bucket fixed -> https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/ */
+				.los-angeles-pic {
+					background-image: url("losangelesimage.jpeg");
+					background-size: cover;
+					opacity: 0.75;
+				}
+				.san-francisco-pic:hover {
+					opacity: 1;
+				}
+				.los-angeles-pic:hover {
+					opacity: 1;
+				}
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+			.fa-angle-down {
+				padding-bottom: 30px;
+	    	margin-top: -30px;
+			}
 	}
 }
 
@@ -112,6 +126,7 @@
 		.card-body {
 			color: black;
 			border-radius: 10px;
+			background-size: cover;
 			.date {
 				background-color: #fff;
 				border: 1px solid #007bff;
@@ -134,7 +149,7 @@
 	}
 }
 .meetups {
-	height: 650px;
+	min-height: 650px;
 }
 .meetup-info {
 	height: 250px;

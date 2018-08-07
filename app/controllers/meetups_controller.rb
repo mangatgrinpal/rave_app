@@ -1,11 +1,15 @@
 class MeetupsController < ApplicationController
-	before_action :find_meetup, only: [:show]
+	
 
 	def index
-		render json: {meetup: @meetup}
+		
 	end
 
 	def create
+	end
+
+	def show
+		
 	end
 
 	private
