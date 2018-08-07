@@ -26,7 +26,7 @@ class EventShow extends React.Component {
 				<div className="row">
 					<div className="col-6 show">
 						<div className="card">
-							<div className="card-body" style={{backgroundImage: "url(" + this.props.event.poster +")"}}>
+							<div className="card-body" style={{backgroundImage: "url(" + this.props.event.poster + ")"}}>
 								<div className="card-title date">
 									<div className="center">
 										<h5>{this.props.monthDate}</h5>

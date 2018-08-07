@@ -20,6 +20,9 @@
 	text-align: center;
 	margin: auto;
 }
+.center-text {
+	text-alight: center;
+}
 
 .global-nav {
 	border-bottom: 1px solid #007bff;
@@ -30,7 +33,7 @@
 	color: #fff;
 	text-align: center;
 	padding: 220px 0px;
-	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/audience.jpeg");
+	background-image: url("audience.jpeg");
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
@@ -39,6 +42,7 @@
 	h2 {
 		margin-top: -20px;
 	}
+	min-height: 500px;
 	.container {
 		.card-deck {
 			width: 100%;
@@ -63,9 +67,23 @@
 				}
 			}
 		}
-		.event-selector {
-			height: 100%;
+.event-selector {
+	height: 100%;
+	.cities {
+		cursor: pointer;
+		color: #fff;
+		
+		min-height: 330px;
+		.san-francisco-pic {
+			background-image: url("friscoimage.jpeg");
+			background-size: cover;
 		}
+		.los-angeles-pic {
+			background-image: url("losangelesimage.jpeg");
+			background-size: cover;
+		}
+	}
+}
 		a:hover {
 			text-decoration: none;
 		}
@@ -93,6 +111,7 @@
 		background-size: cover;
 		.card-body {
 			color: black;
+			border-radius: 10px;
 			.date {
 				background-color: #fff;
 				border: 1px solid #007bff;

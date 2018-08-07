@@ -10,6 +10,7 @@ class Home extends React.Component {
 
 	
 	render() {
+		
 		return (
 			<div className="container-fluid">
 				<HomeLanding isLoggedIn={this.props.isLoggedIn}/>

@@ -8,7 +8,15 @@ class EventMeets extends React.Component {
 			meetups: this.props.meetups
 		}
 	}
-	meetupInfo () {}
+	meetUpInfo () {
+		$.ajax("/meetups/" + this.state.meetups.id, {
+				type: "GET",
+				dataType: "JSON",
+				success: (data) => {
+					this.setState({meetups: data.meetup})
+				}
+		})
+	}
 
 	meetUpData () {
 		var meetups = this.state.meetups.map ((meetup) => {
@@ -24,7 +32,7 @@ class EventMeets extends React.Component {
 			)
 		})
 		return (
-			<div className="container">
+			<div className="container-fluid">
 				{meetups}
 			</div>
 		)

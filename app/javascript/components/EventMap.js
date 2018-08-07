@@ -6,21 +6,28 @@ class EventMap extends React.Component {
 	}
 
 	render () {
-		
+		if (this.props.event.venue_map === null) {
 
-		return (
-			<div className="container">
-				<div className="row">
-					<div className="col">
-						<h3>Venue Map</h3>
-						<p>To the right is a map of {this.props.event.venue}, it may be a good idea to check it out.</p>
-					</div>
-					<div className="col-8 venue-map">
-						<img src={this.props.event.venue_map}/>
+			return (
+				<div/>
+			)
+		}
+
+		else {
+			return (
+				<div className="container">
+					<div className="row">
+						<div className="col">
+							<h3>Venue Map</h3>
+							<p>To the right is a map of {this.props.event.venue}, it may be a good idea to check it out.</p>
+						</div>
+						<div className="col-8 venue-map">
+							<img src={this.props.event.venue_map}/>
+						</div>
 					</div>
 				</div>
-			</div>
-		)
+			)
+		}
 	}
 }
 
