@@ -69,7 +69,7 @@ class EventList extends React.Component {
 
 		return (
 	
-				<div className="container center">
+				<div className="center">
 					<div className="row">
 						<div className="col-12 event-selector">
 							{!this.state.isHidden && 

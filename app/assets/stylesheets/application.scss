@@ -28,7 +28,7 @@
 }
 
 #landing-background {
-	height: 440px;
+	height: 406px;
 	color: #fff;
 	text-align: center;
 	padding: 160px 0px;
@@ -44,31 +44,31 @@
 		margin-top: -20px;
 	}
 	min-height: 500px;
-	.container {
-		.card-deck {
-			width: 100%;
-			margin: 70px 0px 0px 0px;
-			
-			.card {
-				width: 275px;
-				height: 240px;
-				margin-bottom: 30px;
-				background-color: gray;
-				box-shadow: 1px 3px 18px #888;
+	
+	.card-deck {
+		width: 100%;
+		margin: 70px 0px 0px 0px;
+		
+		.card {
+			width: 275px;
+			height: 240px;
+			margin-bottom: 30px;
+			background-color: gray;
+			box-shadow: 1px 3px 18px #888;
 
-				.card-img-top {
-					height: 160px;
-					background-size: contain;
-				}
-				.card-body {
-					height: 80px;
-					padding: 0px 0px;
-					text-align: center;
-					color: white;
-				}
+			.card-img-top {
+				height: 160px;
+				background-size: contain;
+			}
+			.card-body {
+				height: 80px;
+				padding: 0px 0px;
+				text-align: center;
+				color: white;
 			}
 		}
 	}
+
 	.event-selector {
 			
 			.cities {
@@ -78,7 +78,7 @@
 				}
 				cursor: pointer;
 				color: #fff;
-				min-height: 330px;
+				height: 300px;
 				.san-francisco-pic {
 					background-image: url("friscoimage.jpeg");
 					background-size: cover;
@@ -153,7 +153,7 @@
 .meetups {
 	
 	.meetup-info {
-	min-height: 250px;
+		min-height: 250px;
 		.meetup-list {
 			height: 50px;
 			.col {
