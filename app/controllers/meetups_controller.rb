@@ -7,9 +7,10 @@ class MeetupsController < ApplicationController
 
 	def create
 		@meetup = current_user.meetups.build(meetup_params)
-
+		@event = Event.find(params[:event_id])
+		
 		if @meetup.save
-			render json: @meetup, status: :created, location: @meetup
+			render json: @event.meetups, status: :created
 		else
 			render json: @meetup.errors, status: :unprocessable_entity
 		end
@@ -25,6 +26,6 @@ class MeetupsController < ApplicationController
 	end
 
 	def meetup_params
-		params.require(:meetup).permit(:name)
+		params.require(:meetup).permit(:name).merge({event_id:params[:event_id]})
 	end
 end

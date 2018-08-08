@@ -7,6 +7,7 @@ class MeetupModal extends React.Component {
 	}
 
 	render () {
+		
 		return (
 			<div className="modal fade" id="meetupModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div className="modal-dialog modal-dialog-centered" role="document">
@@ -17,7 +18,7 @@ class MeetupModal extends React.Component {
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
-			      <MeetupForm meetupIndexUrl={this.props.meetupIndexUrl} />
+			      <MeetupForm meetupIndexUrl={this.props.meetupIndexUrl} updateMeetupsState={this.props.updateMeetupsState}/>
 			    </div>
 			  </div>
 			</div>

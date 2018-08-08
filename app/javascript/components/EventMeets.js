@@ -6,19 +6,24 @@ class EventMeets extends React.Component {
 	constructor(props) {
 		super(props);
 		this.meetUpInfo = this.meetUpInfo.bind(this)
+		this.updateMeetupsState = this.updateMeetupsState.bind(this)
 		this.state = {
 			meetups: this.props.meetups
 		}
 	}
 	meetUpInfo () {
-	
-		$.ajax("/meetups/" + this.state.meetups.id, {
+		
+		$.ajax("/meetups/" + self.state.meetups.id, {
 				type: "GET",
 				dataType: "JSON",
 				success: (data) => {
-					this.setState({meetups: data.meetup})
+					self.setState({meetups: data.meetup})
 				}
 		})
+	}
+
+	updateMeetupsState(data) {
+		this.setState({meetups: data})
 	}
 
 	meetUpData () {
@@ -39,52 +44,43 @@ class EventMeets extends React.Component {
 
 
 	render () {
-		console.log(this.props)
-
-		if (this.props.meetups.length > 0) {
-			return (
-				<div className="meetups">
-					<div className="row">
-						<div className="col">
-							<h2 className="center">Meetups at this event</h2>
-							<br/>
-						</div>
-					</div>
+		var stuff, text, badMeetupsText, startNewMeetupText;
+		if (this.state.meetups.length > 0) {
+			stuff =  
+				<div>
 					<div className="meetup-info">
 						{this.meetUpData()}
 					</div>
-					<div className="meetup-modal">
-						<br/>
-						Don't see any that you like?
-						<br/>
-						{/* Button trigger modal */}
-						<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">Start your own.</button>
-						{/* Modal */}
-						<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} />
-					</div>
 					<div className="meetup-full">
-
 					</div>
 				</div>
-			)
+
+			text = "Meetups at this event."
+			badMeetupsText = "Don't see any that you like?"
+			startNewMeetupText = "Start your own."
 		}
 		else {
-			return (
-				<div className="meetups">
-					<div className="row">
-						<div className="col">
-							<h2>No meetups at this event yet.</h2>
-							<div className="meetup-modal">
-								{/* Button trigger modal */}
-								<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">Start one now.</button>
-								{/* Modal */}
-								<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} />
-							</div>
-						</div>
+			text = "No Meetups at this event."
+			startNewMeetupText = "Start one now."
+		}
+
+		return (
+			<div className="meetups">
+				<div className="row">
+					<div className="col">
+						<h2 className="center">{text}</h2>
+						<br/>
 					</div>
 				</div>
-			)
-		}
+				{stuff}
+				<div className="meetup-modal">
+					{badMeetupsText}
+					<br/>
+						<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">{startNewMeetupText}</button>
+					</div>
+				<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} updateMeetupsState={this.updateMeetupsState} />
+			</div>
+		)
 	};
 }
 

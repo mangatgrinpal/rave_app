@@ -151,10 +151,9 @@
 }
 
 .meetups {
-	min-height: 650px;
+	
 	.meetup-info {
-	height: 250px;
-	overflow: scroll;
+	min-height: 250px;
 		.meetup-list {
 			height: 50px;
 			.col {
@@ -166,7 +165,7 @@
 		text-align: center;
 	}
 	.meetup-full {
-	min-height: 300px;
+	
 	}
 }
 

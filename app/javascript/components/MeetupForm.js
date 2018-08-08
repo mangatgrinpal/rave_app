@@ -13,8 +13,8 @@ class MeetupForm extends React.Component {
 	}
 
 
-	handleInputChange(event) {
-		const target = event.target;
+	handleInputChange(meetup) {
+		const target = meetup.target;
 		const value = target.value;
 		const name = target.name;
 
@@ -26,12 +26,14 @@ class MeetupForm extends React.Component {
 	
 	newMeetup(e) {
 		e.preventDefault()
-		$.ajax(this.props.meetupIndexUrl, {
-				data: {meetup: this.state},
+		var self = this;
+		$.ajax(self.props.meetupIndexUrl, {
+				data: {meetup: self.state},
 				dataType: "JSON",
 				type: "POST",
-				success: ()=> {
-					alert("HIT!")
+				success: (data)=> {
+					self.props.updateMeetupsState(data)
+					$('#meetupModal').modal('toggle');
 				}
 		})
 	}
@@ -43,7 +45,7 @@ class MeetupForm extends React.Component {
 	        <div>
 						<form>
 			        <label>
-			        	Name:<br/>
+			        	Name: 
 			        	<input 
 			        		type="text" 
 			        		name="name" 
