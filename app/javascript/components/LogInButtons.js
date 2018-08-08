@@ -1,5 +1,5 @@
 import React from "react"
-import EventModal from "./EventModal"
+
 
 class LogInButtons extends React.Component {
 	constructor(props){
@@ -24,16 +24,6 @@ class LogInButtons extends React.Component {
 			return (
 				<div>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
-				</div>
-			)
-		}
-		else if (this.props.isLoggedIn && this.props.currentUser.admin) {
-			return (
-				<div>
-					{/* Button trigger modal */}
-					<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">New RaveMeet</button>
-					{/* Modal */}
-					<EventModal eventIndexUrl={this.props.eventIndexUrl}/>
 				</div>
 			)
 		}

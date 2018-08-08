@@ -1,14 +1,14 @@
 import React from "react"
-import EventForm from "./EventForm"
+import MeetupForm from "./MeetupForm"
 
-class EventModal extends React.Component {
+class MeetupModal extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render () {
 		return (
-			<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div className="modal fade" id="meetupModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div className="modal-dialog modal-dialog-centered" role="document">
 			    <div className="modal-content">
 			      <div className="modal-header">
@@ -17,7 +17,7 @@ class EventModal extends React.Component {
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
-			      <EventForm eventIndexUrl={this.props.eventIndexUrl}/>
+			      <MeetupForm meetupIndexUrl={this.props.meetupIndexUrl} />
 			    </div>
 			  </div>
 			</div>
@@ -25,4 +25,4 @@ class EventModal extends React.Component {
 	}
 }
 
-export default EventModal
+export default MeetupModal

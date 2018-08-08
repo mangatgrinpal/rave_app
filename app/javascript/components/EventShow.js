@@ -36,7 +36,7 @@ class EventShow extends React.Component {
 							</div>
 						</div>
 					</div>
-					<div className="col details">
+					<div className="col-6 details">
 						<div className="row info-main">
 							<div className="col">
 								<h5>{this.props.event.name}</h5>
@@ -45,7 +45,7 @@ class EventShow extends React.Component {
 							</div>
 						</div>
 						<div className="row description">
-							<div className="col">
+							<div className="col-10 center">
 								<p>{this.props.event.description}</p>
 							</div>
 						</div>

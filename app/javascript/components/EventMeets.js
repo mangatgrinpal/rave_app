@@ -1,5 +1,6 @@
 import React from "react"
 import Meetup from "./Meetup"
+import MeetupModal from "./MeetupModal"
 
 class EventMeets extends React.Component {
 	constructor(props) {
@@ -52,6 +53,15 @@ class EventMeets extends React.Component {
 					<div className="meetup-info">
 						{this.meetUpData()}
 					</div>
+					<div className="meetup-modal">
+						<br/>
+						Don't see any that you like?
+						<br/>
+						{/* Button trigger modal */}
+						<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">Start your own.</button>
+						{/* Modal */}
+						<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} />
+					</div>
 					<div className="meetup-full">
 
 					</div>
@@ -64,7 +74,12 @@ class EventMeets extends React.Component {
 					<div className="row">
 						<div className="col">
 							<h2>No meetups at this event yet.</h2>
-							<p><a href="javascript:void(0)">Start one</a> now to get it poppin'!</p>
+							<div className="meetup-modal">
+								{/* Button trigger modal */}
+								<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">Start one now.</button>
+								{/* Modal */}
+								<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} />
+							</div>
 						</div>
 					</div>
 				</div>

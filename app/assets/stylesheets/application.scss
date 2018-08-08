@@ -142,32 +142,36 @@
 	height: 480px;
 	.info-main {
 		height: 120px;
+		
 	}
 	.description {
 		height: 360px;
 		overflow: scroll;
 	}
 }
+
 .meetups {
 	min-height: 650px;
-}
-.meetup-info {
+	.meetup-info {
 	height: 250px;
 	overflow: scroll;
-	.meetup-list {
-		height: 50px;
-		.col {
-			border: 1px solid black;
+		.meetup-list {
+			height: 50px;
+			.col {
+				border: 1px solid black;
+			}
 		}
 	}
+	.meetup-modal {
+		text-align: center;
+	}
+	.meetup-full {
+	min-height: 300px;
+	}
 }
-.meetup-full {
-	height: 300px;
-}
+
 .venue-map {
 	img {
 		width: 100%;
 	}
 }
-
-
