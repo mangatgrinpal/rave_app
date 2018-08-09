@@ -11,7 +11,7 @@ class LogInButtons extends React.Component {
 				dataType: "JSON",
 				type: "DELETE",
 				success: ()=> {
-					window.location.replace("/")
+					window.location.reload()
 					alert("You've been successfully logged out.")
 				}
 		});

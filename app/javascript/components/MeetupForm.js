@@ -34,7 +34,14 @@ class MeetupForm extends React.Component {
 				success: (data)=> {
 					self.props.updateMeetupsState(data)
 					$('#meetupModal').modal('toggle');
-				}
+				},error: ()=> {
+						if (self.props.isLoggedIn) {
+							alert("Please enter a name.")
+						}
+						else {
+							alert("Please log in to create meetups.")
+						}
+					}
 		})
 	}
 	

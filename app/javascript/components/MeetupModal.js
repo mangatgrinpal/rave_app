@@ -18,7 +18,9 @@ class MeetupModal extends React.Component {
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
-			      <MeetupForm meetupIndexUrl={this.props.meetupIndexUrl} updateMeetupsState={this.props.updateMeetupsState}/>
+			      <MeetupForm meetupIndexUrl={this.props.meetupIndexUrl} 
+			      						updateMeetupsState={this.props.updateMeetupsState}
+			      						isLoggedIn={this.props.isLoggedIn}/>
 			    </div>
 			  </div>
 			</div>

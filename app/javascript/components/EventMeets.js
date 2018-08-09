@@ -86,7 +86,9 @@ class EventMeets extends React.Component {
 					<br/>
 						<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">{startNewMeetupText}</button>
 					</div>
-				<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} updateMeetupsState={this.updateMeetupsState} />
+				<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} 
+										updateMeetupsState={this.updateMeetupsState}
+										isLoggedIn={this.props.isLoggedIn}/>
 			</div>
 		)
 	};

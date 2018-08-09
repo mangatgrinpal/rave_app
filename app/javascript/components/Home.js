@@ -14,7 +14,7 @@ class Home extends React.Component {
 		return (
 			<div className="container-fluid">
 				<HomeLanding isLoggedIn={this.props.isLoggedIn}/>
-				<div className="row">
+				<div className="row no-gutters">
 					<div className="col events">	
 					<br/>
 						<EventList key={event.id} 
@@ -23,11 +23,25 @@ class Home extends React.Component {
 					<br/>
 					</div>
 				</div>
-				<div id="instructions" className="row">
-					<div className="col">
-						<h3>Hello World</h3>
+				<div id="instructions" className="row center-text">
+					<div className="col-6">
+						<br/>
+						<h3>What is RaveMeet?</h3>
+						<p>RaveMeet allows you to explore popular events in the San Francisco and Los Angeles areas
+						and organize meetups.</p>
+						<i className="fa fa-3x fa-users"/>
 					</div>
 				</div>
+				<div className="row center-text ravemeet-description">
+					<div className="col-6 offset-6">
+						<br/>
+						<h3>How does it work?</h3>
+						<p>Anyone can organize a meetup, and you can choose to make it open or private.</p>
+						<i className="fa fa-3x fa-street-view"/>
+					</div>
+				</div>
+				
+				
 			</div>
 		)
 	};

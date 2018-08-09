@@ -20,11 +20,12 @@
 	margin: auto;
 }
 .center-text {
-	text-alight: center;
+	text-align: center;
 }
 
 .global-nav {
 	border-bottom: 1px solid #007bff;
+	height: 80px;
 }
 
 #landing-background {
@@ -33,17 +34,15 @@
 	text-align: center;
 	padding: 160px 0px;
 	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/audience.jpeg");
-	
-	background-attachment: fixed;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
 
 .events {
+	min-height: 470px;
 	h2 {
 		margin-top: -20px;
 	}
-	min-height: 470px;
 	
 	.card-deck {
 		width: 100%;
@@ -67,6 +66,10 @@
 				color: white;
 			}
 		}
+	}
+	.hunnit {
+		background-color: #fff;
+		height: 100px;
 	}
 
 	.event-selector {
@@ -106,10 +109,14 @@
 				text-decoration: none;
 			}
 			.fa-angle-down {
-				padding-bottom: 30px;
-	    	margin-top: -30px;
+				padding-bottom: 0px;
+	    	margin-top: -50px;
 			}
 	}
+}
+.hunnit {
+		background-color: #fff;
+		height: 80px;
 }
 
 .event {
@@ -119,9 +126,14 @@
 #instructions {
 	background-color: #000;
 	color: #fff;
-	height: 300px;
+	min-height: 300px;
+	.col-6 {
+		margin: auto 0px;
+	}
 }
-
+.ravemeet-description {
+	min-height: 300px;
+}
 .show {
 	.card {
 		height: 480px;
@@ -176,5 +188,14 @@
 .venue-map {
 	img {
 		width: 100%;
+	}
+}
+
+#footer {
+	color: white;
+	background-color: black;
+	.meetup-link {
+		border-bottom: 1px solid white;
+		margin: 0px;
 	}
 }

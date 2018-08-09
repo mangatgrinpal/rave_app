@@ -1,2 +1,2 @@
 
-= react_component("EventShow", {event:@event, monthDate:@event.date.strftime("%b %e"), year:@event.date.strftime("%Y"), meetups:@meetups, meetupIndexUrl:event_meetups_path(@event)})
+= react_component("EventShow", {event:@event, monthDate:@event.date.strftime("%b %e"), year:@event.date.strftime("%Y"), meetups:@meetups, meetupIndexUrl:event_meetups_path(@event), isLoggedIn:user_signed_in?})

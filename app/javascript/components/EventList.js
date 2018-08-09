@@ -60,7 +60,7 @@ class EventList extends React.Component {
 	}
 
 	changeLocation(evt) {
-		this.setState({location: evt.target.id, page: 0, isHidden: !this.state.isHidden}, ()=>{this.getMoreEvents()})
+		$(this.setState({location: evt.target.id, page: 0, isHidden: !this.state.isHidden}, ()=>{this.getMoreEvents()}))
 	}
 
 
