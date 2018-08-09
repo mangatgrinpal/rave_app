@@ -58,6 +58,7 @@
 			.card-img-top {
 				height: 160px;
 				background-size: cover;
+				background-position-x: center;
 			}
 			.card-body {
 				height: 80px;
@@ -146,6 +147,7 @@
 			color: black;
 			border-radius: 10px;
 			background-size: cover;
+			background-position-x: center;
 			.date {
 				background-color: #fff;
 				border: 1px solid #007bff;
