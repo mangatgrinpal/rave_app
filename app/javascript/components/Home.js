@@ -36,7 +36,7 @@ class Home extends React.Component {
 					<div className="col-6 offset-6">
 						<br/>
 						<h3>How does it work?</h3>
-						<p>Anyone can organize a meetup, and you can choose to make it open or private.</p>
+						<p>Anyone can organize a meetup, and you can choose to make it open or private. Meet new people or unite with your friends.</p>
 						<i className="fa fa-3x fa-street-view"/>
 					</div>
 				</div>

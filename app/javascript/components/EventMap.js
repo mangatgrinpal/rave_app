@@ -16,6 +16,7 @@ class EventMap extends React.Component {
 		else {
 			return (
 				<div className="container">
+					<br/>
 					<div className="row">
 						<div className="col">
 							<h3>Venue Map</h3>
@@ -25,6 +26,8 @@ class EventMap extends React.Component {
 							<img src={this.props.event.venue_map}/>
 						</div>
 					</div>
+					<br/>
+					<br/>
 				</div>
 			)
 		}

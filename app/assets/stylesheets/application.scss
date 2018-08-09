@@ -133,6 +133,9 @@
 }
 .ravemeet-description {
 	min-height: 300px;
+	.col-6 {
+		margin: auto 0px auto 50%;
+	}
 }
 .show {
 	.card {
@@ -192,10 +195,23 @@
 }
 
 #footer {
+	border-top: 1px solid #007bff;
 	color: white;
 	background-color: black;
 	.meetup-link {
 		border-bottom: 1px solid white;
-		margin: 0px;
+		margin: 0px 0px 0px -15px;
+		padding-bottom: 20px;
+		font-size: 1.5rem;
+	}
+	.account-links {
+		a {
+			color: #fff;
+		}
+		.follow {
+			a {
+				color: #007bff;
+			}
+		}
 	}
 }
