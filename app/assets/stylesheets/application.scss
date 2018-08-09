@@ -32,8 +32,8 @@
 	color: #fff;
 	text-align: center;
 	padding: 160px 0px;
-	background-image: url("audience.jpeg");
-	/* add this prefix to images after s3 bucket fixed -> https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/ */
+	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/audience.jpeg");
+	
 	background-attachment: fixed;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
@@ -43,7 +43,7 @@
 	h2 {
 		margin-top: -20px;
 	}
-	min-height: 500px;
+	min-height: 470px;
 	
 	.card-deck {
 		width: 100%;
@@ -58,7 +58,7 @@
 
 			.card-img-top {
 				height: 160px;
-				background-size: contain;
+				background-size: cover;
 			}
 			.card-body {
 				height: 80px;
@@ -80,21 +80,25 @@
 				color: #fff;
 				height: 300px;
 				.san-francisco-pic {
-					background-image: url("friscoimage.jpeg");
+					background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/friscoimage.jpeg");
 					background-size: cover;
 					opacity: 0.75;
 				}
-				/* add this prefix to images after s3 bucket fixed -> https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/ */
+				
 				.los-angeles-pic {
-					background-image: url("losangelesimage.jpeg");
+					background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/losangelesimage.jpeg");
 					background-size: cover;
 					opacity: 0.75;
 				}
 				.san-francisco-pic:hover {
 					opacity: 1;
+					border-width: 2px;
+					border-style: inset;
 				}
 				.los-angeles-pic:hover {
 					opacity: 1;
+					border-width: 2px;
+					border-style: inset;
 				}
 			}
 

@@ -48,6 +48,14 @@ class EventMeets extends React.Component {
 		if (this.state.meetups.length > 0) {
 			stuff =  
 				<div>
+					<div className="row meetup-titles">
+						<div className="col">
+							<h5>Name</h5>
+						</div>
+						<div className="col">
+							<h5>Organizer</h5>
+						</div>
+					</div>
 					<div className="meetup-info">
 						{this.meetUpData()}
 					</div>

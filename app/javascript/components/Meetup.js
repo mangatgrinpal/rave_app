@@ -12,7 +12,7 @@ class Meetup extends React.Component {
 					<a onClick={this.props.meetUpInfo} href="javascript:void(0)">{this.props.meetup.name}</a>
 				</div>
 				<div className="col">
-					{this.props.meetup.user.email}
+					{this.props.meetup.user.username}
 				</div>
 			</div>
 		)
