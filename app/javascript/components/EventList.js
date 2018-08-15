@@ -8,11 +8,12 @@ class EventList extends React.Component {
 		this.getMoreEvents = this.getMoreEvents.bind(this)
 		this.changeLocation = this.changeLocation.bind(this)
 		this.goBack = this.goBack.bind(this)
+		this.camelCaseToString = this.camelCaseToString.bind(this)
 		this.state = {
 			events: this.props.events,
 			page: 1,
 			showMore: true,
-			location: 'San Francisco',
+			location: 'sanFrancisco',
 			isHidden: false
 		}
 	}
@@ -63,6 +64,13 @@ class EventList extends React.Component {
 		$(this.setState({location: evt.target.id, page: 0, isHidden: !this.state.isHidden}, ()=>{this.getMoreEvents()}))
 	}
 
+	camelCaseToString() {
+		var x = this.state.location
+		return (
+		x.replace(/([A-Z])/g, ' $1')
+		.replace(/^./, function(str){ return str.toUpperCase(); })
+		)
+	}
 
 
 	render () {
@@ -77,17 +85,17 @@ class EventList extends React.Component {
 							<h3>Choose a city to get started.</h3>
 							<br/>
 							<div className="row cities">
-								<div onClick={this.changeLocation} id="San Francisco" className="col-7 san-francisco-pic">
+								<div onClick={this.changeLocation} id="sanFrancisco" className="col-7 san-francisco-pic">
 									<p>San Francisco</p>
 								</div>
-								<div onClick={this.changeLocation} id="Los Angeles" className="col-5 los-angeles-pic">
+								<div onClick={this.changeLocation} id="losAngeles" className="col-5 los-angeles-pic">
 								<p>Los Angeles</p>
 								</div>
 							</div>
 							</div>}
 							{this.state.isHidden && 
 							<div>
-							<h3>Upcoming events in {this.state.location}</h3>
+							<h3>Upcoming events in {this.camelCaseToString()}</h3>
 							<button className="btn btn-primary" onClick={this.goBack}>Start Over</button>
 
 							{this.tableData()}

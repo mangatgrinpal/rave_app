@@ -11,10 +11,20 @@ class LogInButtons extends React.Component {
 				dataType: "JSON",
 				type: "DELETE",
 				success: ()=> {
-					window.location.reload()
 					alert("You've been successfully logged out.")
+					var pathname = window.location.pathname
+					if (pathname === "/dashboard") {
+						window.location.replace("/")
+					}
+					else {
+						window.location.reload()
+					}
 				}
 		});
+	}
+
+	goDashboard() {
+		window.location.replace("/dashboard")
 	}
 
 
@@ -23,6 +33,7 @@ class LogInButtons extends React.Component {
 		if (this.props.isLoggedIn) {
 			return (
 				<div>
+					<button onClick={this.goDashboard} className="btn btn-outline-primary">Dashboard</button>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
 			)

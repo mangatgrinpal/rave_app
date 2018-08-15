@@ -5,32 +5,28 @@ import MeetupModal from "./MeetupModal"
 class EventMeets extends React.Component {
 	constructor(props) {
 		super(props);
-		this.meetUpInfo = this.meetUpInfo.bind(this)
 		this.updateMeetupsState = this.updateMeetupsState.bind(this)
+		this.setCurrentlySelectedMeetup = this.setCurrentlySelectedMeetup.bind(this)
 		this.state = {
-			meetups: this.props.meetups
+			meetups: this.props.meetups,
+			currentlySelectedMeetup: {}
 		}
 	}
-	meetUpInfo () {
-		
-		$.ajax("/meetups/" + self.state.meetups.id, {
-				type: "GET",
-				dataType: "JSON",
-				success: (data) => {
-					self.setState({meetups: data.meetup})
-				}
-		})
-	}
+	
 
 	updateMeetupsState(data) {
 		this.setState({meetups: data})
+	}
+
+	setCurrentlySelectedMeetup(meetup) {
+		this.setState({currentlySelectedMeetup: meetup})
 	}
 
 	meetUpData () {
 		var meetups = this.state.meetups.map ((meetup) => {
 			return (
 				<div key={meetup.id}>
-					<Meetup meetUpInfo={this.meetUpInfo} meetup={meetup} />
+					<Meetup meetupIndexUrl={this.props.meetupIndexUrl} meetup={meetup} setCurrentlySelectedMeetup={this.setCurrentlySelectedMeetup}/>
 				</div>
 			)
 		})
@@ -41,25 +37,27 @@ class EventMeets extends React.Component {
 		)
 	}
 
-
-
+	
 	render () {
 		var stuff, text, badMeetupsText, startNewMeetupText;
 		if (this.state.meetups.length > 0) {
 			stuff =  
 				<div>
 					<div className="row meetup-titles">
-						<div className="col">
+						<div className="col-2">
 							<h5>Name</h5>
 						</div>
-						<div className="col">
+						<div className="col-2">
 							<h5>Organizer</h5>
 						</div>
 					</div>
-					<div className="meetup-info">
-						{this.meetUpData()}
-					</div>
-					<div className="meetup-full">
+					<div className="row meetup-info">
+						<div className="col-4">
+							{this.meetUpData()}
+						</div>
+						<div className="col meetup-full">
+						{this.state.currentlySelectedMeetup.description}
+						</div>
 					</div>
 				</div>
 

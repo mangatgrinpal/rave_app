@@ -8,7 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  %body
+  %body{class: controller.controller_name}
     - flash.each do |name, msg|
       .alert{ :class => "alert-#{name}" }
         %button.close{ :data => { :dismiss => "alert"} } x

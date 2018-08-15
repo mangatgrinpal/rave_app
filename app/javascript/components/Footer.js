@@ -5,10 +5,6 @@ class Footer extends React.Component {
 		super(props);
 	}
 
-	goInstagram() {
-		window.location.assign("www.instagram.com")
-	}
-
 	render () {
 		return (
 			<div id="footer" className="container-fluid">

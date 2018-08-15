@@ -5,7 +5,8 @@ class MeetupForm extends React.Component {
 		super(props);
 		this.newMeetup = this.newMeetup.bind(this)
 		this.state = {
-			name: ''
+			name: '',
+			description: ''
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -52,13 +53,24 @@ class MeetupForm extends React.Component {
 	        <div>
 						<form>
 			        <label>
-			        	Name: 
+			        	Name:<br/> 
 			        	<input 
 			        		type="text" 
-			        		name="name" 
+			        		name="name"
 			        		value={this.state.name} 
 			        		onChange={this.handleInputChange} 
 			        		placeholder="Meetup Name" />
+			        	<br/>
+			        </label>
+			        <label>
+			        	Description:<br/> 
+			        	<textarea  
+			        		name="description"
+			        		rows="10"
+			        		cols="50" 
+			        		value={this.state.description} 
+			        		onChange={this.handleInputChange} 
+			        		placeholder="Meetup Description" />
 			        	<br/>
 			        </label>
 			      </form>

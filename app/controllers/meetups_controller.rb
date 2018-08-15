@@ -1,5 +1,6 @@
 class MeetupsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
+	
 
 	def index
 		
@@ -18,6 +19,7 @@ class MeetupsController < ApplicationController
 
 	def show
 		
+
 	end
 
 	private
@@ -26,6 +28,6 @@ class MeetupsController < ApplicationController
 	end
 
 	def meetup_params
-		params.require(:meetup).permit(:name).merge({event_id:params[:event_id]})
+		params.require(:meetup).permit(:name, :description).merge({event_id:params[:event_id]})
 	end
 end
