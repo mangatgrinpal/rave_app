@@ -8,12 +8,11 @@ class EventList extends React.Component {
 		this.getMoreEvents = this.getMoreEvents.bind(this)
 		this.changeLocation = this.changeLocation.bind(this)
 		this.goBack = this.goBack.bind(this)
-		this.camelCaseToString = this.camelCaseToString.bind(this)
 		this.state = {
 			events: this.props.events,
 			page: 1,
 			showMore: true,
-			location: 'sanFrancisco',
+			location: '',
 			isHidden: false
 		}
 	}
@@ -22,6 +21,8 @@ class EventList extends React.Component {
 		var events = this.state.events.map ((event)=> {
 			return (
 				<div className="center" key={event.id} >
+					<br/>
+					<br/>
 					<Event event={event} eventIndexUrl={this.props.eventIndexUrl}/>
 					<br/>
 				</div>
@@ -30,14 +31,14 @@ class EventList extends React.Component {
 
 			if (this.state.events.length % 3 === 0) {
 				return (
-					<div className="card-deck">
+					<div className="card-deck center">
 						{events}
 					</div>
 				)
 			}
 			else {
 				return (
-					<div className="card-deck">
+					<div className="card-deck center">
 						{events}
 					</div>
 				)
@@ -82,14 +83,14 @@ class EventList extends React.Component {
 						<div className="col-12 event-selector">
 							{!this.state.isHidden && 
 							<div> 
-							<h3>Choose a city to get started.</h3>
+							<h3>Choose a city to get started</h3>
 							<br/>
 							<div className="row cities">
 								<div onClick={this.changeLocation} id="sanFrancisco" className="col-7 san-francisco-pic">
-									<p>San Francisco</p>
+									<p id="sanFrancisco">San Francisco</p>
 								</div>
 								<div onClick={this.changeLocation} id="losAngeles" className="col-5 los-angeles-pic">
-								<p>Los Angeles</p>
+									<p id="losAngeles">Los Angeles</p>
 								</div>
 							</div>
 							</div>}
@@ -97,7 +98,7 @@ class EventList extends React.Component {
 							<div>
 							<h3>Upcoming events in {this.camelCaseToString()}</h3>
 							<button className="btn btn-primary" onClick={this.goBack}>Start Over</button>
-
+							<br/>
 							{this.tableData()}
 							<a onClick={this.getMoreEvents} href="javascript:void(0)" >
 							<ArrowButton events={this.props.events} showMore={this.state.showMore}/></a>

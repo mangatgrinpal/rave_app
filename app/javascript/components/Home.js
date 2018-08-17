@@ -24,8 +24,7 @@ class Home extends React.Component {
 					</div>
 				</div>
 				<div id="instructions" className="row center-text">
-					<div className="col-6">
-						<br/>
+					<div className="col-10">
 						<h3>What is RaveMeet?</h3>
 						<p>RaveMeet allows you to explore popular events in the San Francisco and Los Angeles areas
 						and organize meetups.</p>
@@ -33,11 +32,10 @@ class Home extends React.Component {
 					</div>
 				</div>
 				<div className="row center-text ravemeet-description">
-					<div className="col-6 offset-6">
-						<br/>
+					<div className="col-10">
 						<h3>How does it work?</h3>
 						<p>Anyone can organize a meetup, and you can choose to make it open or private. Meet new people or unite with your friends.</p>
-						<i className="fa fa-3x fa-street-view"/>
+						<i className="fa fa-4x fa-street-view"/>
 					</div>
 				</div>
 				

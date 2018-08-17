@@ -10,7 +10,7 @@ class Footer extends React.Component {
 			<div id="footer" className="container-fluid">
 				<br/>
 				<div className="row meetup-link">
-					<div className="col offset-1">
+					<div className="col offset-1 sign-up">
 						<a href="/users/sign_up">Sign up today</a>
 					<br/>
 					</div>
@@ -18,7 +18,7 @@ class Footer extends React.Component {
 				<div className="row account-links">
 					<div className="col-2 offset-1">
 					<br/>
-						<a href="/users/edit">Your Account</a>
+						<a href="/dashboard">Your Dashboard</a>
 					</div>
 					<div className="col-2">
 					<br/>
@@ -35,11 +35,11 @@ class Footer extends React.Component {
 						<div className="row">
 							<div className="col">
 								<p> 
-								<a href="javascript:void(0)"><i className="fa fa-2x fa-instagram"/></a>
+								<a href="https://www.instagram.com"><i className="fa fa-2x fa-instagram"/></a>
 								&ensp;
-								<a href="javascript:void(0)"><i className="fa fa-2x fa-twitter-square"/></a>
+								<a href="https://twitter.com"><i className="fa fa-2x fa-twitter-square"/></a>
 								&ensp;
-								<a href="javascript:void(0)"><i className="fa fa-2x fa-github-square"/></a>
+								<a href="https://www.github.com"><i className="fa fa-2x fa-github-square"/></a>
 								</p>
 								<br/>
 								<br/>

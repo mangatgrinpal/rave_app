@@ -6,7 +6,8 @@ class StaticPagesController < ApplicationController
 
 	def dashboard
 		@user = current_user
-		
+		@events = @user.events.uniq
+		@userMeetups = @user.meetups
 	end
 
 end

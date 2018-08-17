@@ -74,6 +74,7 @@ class EventMeets extends React.Component {
 			<div className="meetups">
 				<div className="row">
 					<div className="col">
+						<br/>
 						<h2 className="center">{text}</h2>
 						<br/>
 					</div>

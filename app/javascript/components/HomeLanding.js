@@ -10,7 +10,7 @@ class HomeLanding extends React.Component {
 			return (
 				<div className="row" id="landing-background">
 					<div className="col">
-						<h2>Locate friendly groups at your favorite events.</h2>
+						<h2>Locate friendly groups at your favorite events</h2>
 					</div>
 				</div>
 			)
@@ -19,7 +19,7 @@ class HomeLanding extends React.Component {
 			return (
 				<div className="row" id="landing-background">
 					<div className="col">
-						<h2>Locate friendly groups at your favorite events.
+						<h2>Locate friendly groups at your favorite events
 						<br/>Sign up today!</h2>
 						<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
 					</div>

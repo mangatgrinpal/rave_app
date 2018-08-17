@@ -16,6 +16,13 @@ class EventShow extends React.Component {
 			isHidden: !this.state.isHidden
 		})
 	}
+	camelCaseToString() {
+		var x = this.props.event.location
+		return (
+		x.replace(/([A-Z])/g, ' $1')
+		.replace(/^./, function(str){ return str.toUpperCase(); })
+		)
+	}
 
 	render () {
 
@@ -41,7 +48,7 @@ class EventShow extends React.Component {
 							<div className="col">
 								<h5>{this.props.event.name}</h5>
 								<p>{this.props.event.venue}</p>
-								<p>{this.props.event.location}, CA</p>
+								<p>{this.camelCaseToString()}, CA</p>
 							</div>
 						</div>
 						<div className="row description">

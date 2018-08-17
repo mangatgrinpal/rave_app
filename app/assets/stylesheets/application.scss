@@ -28,19 +28,34 @@ html {
 body {
 	height: 100%;
 }
-.container {
+.container-fluid {
 	height: 100%;
 }
 
 
 .static_pages {
+	
+	.dashboard {
+		.user-greeting {
+			color: white;
+			background-color: black;
+			border-right: 1px solid black;
+		}
+	}
+	#footer {
+		margin-top: 0px;
+	}
+
+}
+.registrations {
 	#footer {
 		margin-top: 0px;
 	}
 }
-
-.events {
-	
+.sessions {
+	#footer {
+		margin-top: 0px;
+	}
 }
 
 #footer {
@@ -55,11 +70,36 @@ body {
 #landing-background {
 	height: 652px;
 	color: #fff;
+	text-shadow: 2px 2px black;
 	text-align: center;
 	padding-top: 390px;
 	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/crowdpic.jpg");
 	background-size: 100% auto;
 	background-repeat: no-repeat;
+}
+
+.card-deck {
+	width: 100%;
+	
+	.card {
+		width: 275px;
+		height: 240px;
+		margin-bottom: 30px;
+		background-color: gray;
+		box-shadow: 1px 3px 18px #888;
+
+		.card-img-top {
+			height: 160px;
+			background-size: cover;
+			background-position-x: center;
+		}
+		.card-body {
+			height: 80px;
+			padding: 0px 0px;
+			text-align: center;
+			color: white;
+		}
+	}
 }
 
 .events {
@@ -73,30 +113,7 @@ body {
 		margin-top: -20px;
 	}
 	
-	.card-deck {
-		width: 100%;
-		margin: 70px 0px 0px 0px;
-		
-		.card {
-			width: 275px;
-			height: 240px;
-			margin-bottom: 30px;
-			background-color: gray;
-			box-shadow: 1px 3px 18px #888;
-
-			.card-img-top {
-				height: 160px;
-				background-size: cover;
-				background-position-x: center;
-			}
-			.card-body {
-				height: 80px;
-				padding: 0px 0px;
-				text-align: center;
-				color: white;
-			}
-		}
-	}
+	
 	.hunnit {
 		background-color: #fff;
 		height: 100px;
@@ -108,6 +125,7 @@ body {
 				p {
 					margin-top: 90px;
 					font-size: 3rem;
+					text-shadow: 2px 2px black;
 				}
 				cursor: pointer;
 				color: #fff;
@@ -118,8 +136,7 @@ body {
 					opacity: 0.75;
 					&:hover {
 					opacity: 1;
-					border-width: 1px;
-					border-style: inset;
+					border: 1px inset black;
 					}
 				}
 				
@@ -129,8 +146,7 @@ body {
 					opacity: 0.75;
 					&:hover {
 					opacity: 1;
-					border-width: 1px;
-					border-style: inset;
+					border: 1px inset black;
 					}
 				}
 			}
@@ -156,15 +172,27 @@ body {
 #instructions {
 	background-color: #000;
 	color: #fff;
-	min-height: 300px;
-	.col-6 {
-		margin: auto 0px;
+	min-height: 500px;
+	.col-10 {
+		margin: auto;
+		h3 {
+			font-size: 2.5rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
 	}
 }
 .ravemeet-description {
-	min-height: 300px;
-	.col-6 {
-		margin: auto 0px auto 50%;
+	min-height: 500px;
+	.col-10 {
+		margin: auto;
+		h3 {
+			font-size: 2.5rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
 	}
 }
 .show {
@@ -225,19 +253,34 @@ body {
 	}
 }
 
+
+
 #footer {
 	border-top: 1px solid #007bff;
 	color: white;
 	background-color: black;
 	.meetup-link {
 		border-bottom: 1px solid white;
-		margin: 0px 0px 0px -15px;
+		margin: 0px;
 		padding-bottom: 20px;
 		font-size: 1.5rem;
+		.sign-up {
+			margin-left: 72px;
+			a {
+				&:hover {
+					color: #007bff;
+					text-decoration: none;
+				}
+			}
+		}
+		
 	}
 	.account-links {
 		a {
 			color: #fff;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 		.follow {
 			a {
