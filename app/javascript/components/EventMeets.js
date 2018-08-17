@@ -25,13 +25,19 @@ class EventMeets extends React.Component {
 	meetUpData () {
 		var meetups = this.state.meetups.map ((meetup) => {
 			return (
-				<div key={meetup.id}>
+				<div className="list-group-item list-group-item-action flex-column align-items-start" key={meetup.id}>
 					<Meetup meetupIndexUrl={this.props.meetupIndexUrl} meetup={meetup} setCurrentlySelectedMeetup={this.setCurrentlySelectedMeetup}/>
 				</div>
 			)
 		})
 		return (
-			<div className="container-fluid">
+			<div className="list-group meetup-list">
+				<div className="list-group-item bg-light flex-column align-items-start">
+					<div className="d-flex w-100 justify-content-between">
+						<h4 className="mb-1">Meetup Name</h4>
+						<h4 className="mb-1">Creator</h4>
+					</div>
+				</div>
 				{meetups}
 			</div>
 		)
@@ -43,16 +49,8 @@ class EventMeets extends React.Component {
 		if (this.state.meetups.length > 0) {
 			stuff =  
 				<div>
-					<div className="row meetup-titles">
-						<div className="col-2">
-							<h5>Name</h5>
-						</div>
-						<div className="col-2">
-							<h5>Organizer</h5>
-						</div>
-					</div>
 					<div className="row meetup-info">
-						<div className="col-4">
+						<div className="col-5">
 							{this.meetUpData()}
 						</div>
 						<div className="col meetup-full">

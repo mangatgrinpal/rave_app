@@ -6,26 +6,28 @@ class HomeLanding extends React.Component {
 	}
 
 	render () {
+		var loggedIn;
 		if (this.props.isLoggedIn) {
-			return (
-				<div className="row" id="landing-background">
-					<div className="col">
-						<h2>Locate friendly groups at your favorite events</h2>
-					</div>
+			loggedIn =
+				<div>
+					<h2>Locate friendly groups at your favorite events</h2>
 				</div>
-			)
 		}
 		else {
-			return (
-				<div className="row" id="landing-background">
-					<div className="col">
-						<h2>Locate friendly groups at your favorite events
-						<br/>Sign up today!</h2>
-						<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
-					</div>
+			loggedIn =
+				<div>
+					<h2>Locate friendly groups at your favorite events
+					<br/>Sign up today!</h2>
+					<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
 				</div>
-			)
 		}
+		return (
+			<div className="row">
+				<div className="col" id="landing-background">
+					{loggedIn}
+				</div>
+			</div>
+		)
 	}
 }
 

@@ -32,40 +32,80 @@ class Dashboard extends React.Component {
 
 	userMeetups() {
 		var userMeetup = this.props.userMeetups.map ((meetup)=> {
-			return (
-				<div className="row" key={meetup.id}>
-					<div className="col">
-						{meetup.name}
+			return (	
+				<div className="list-group-item list-group-item-action flex-column align-items-start" key={meetup.id}>
+					<div className="d-flex w-50 justify-content-between">
+						<h4>{meetup.name}</h4>
 					</div>
+					<p className="mb-1">
+						{meetup.description}
+					</p>
 				</div>
 			)
 		})
 
 		return (
-			<div>
+			<div className="list-group">
 				{userMeetup}
 			</div>
 		)
 	}
 
+	userGreeting () {
+		var d = new Date();
+		var time = d.getHours();
+
+		if (time < 12) {
+			return ( 
+				<div>
+				Good morning
+				</div>
+			)
+		}
+		if (time > 12) {
+			return ( 
+				<div>
+				Good afternoon
+				</div>
+			)
+		}
+		if (time > 17) {
+			return ( 
+				<div>
+				Good evening
+				</div>
+			)
+		}
+	}
+
 	render () {
 		var eventStatus;
-		debugger
 		if (this.props.userEvents.length === 0) {
 			eventStatus =
 			<div className="col-9">
+				<br/>
 				<h3>You're not attending any events yet. Let's change that.</h3>
+				<p>Return home now, click <a href="/">here</a>.</p>
 			</div>
 		}
 
 		else {
 			eventStatus =
 			<div className="col-9">
-				<h3>Events that you're attending</h3>
-				<br/>
-				{this.userEvents()}
-				<h3>Your Meetups</h3>
-				{this.userMeetups()}
+				<div className="col-12">
+					<div className="user-events">
+						<br/>
+						<h3>Events</h3>
+					</div>
+					<br/>
+					{this.userEvents()}
+				</div>
+				<div className="col-9">
+					<h3>Meetups</h3>
+					<br/>
+					{this.userMeetups()}
+				</div>
+					<br/>
 			</div>
 		}
 
@@ -74,8 +114,13 @@ class Dashboard extends React.Component {
 			<div className="container-fluid dashboard">
 				<div className="row">
 					<div className="col-3 user-greeting">
-						<h3>Hello {this.state.user.username}</h3>
-						<a href="/users/edit">Edit your account</a>
+						<br/>
+						<h3>{this.userGreeting()} {this.state.user.username},</h3>
+						<p>your dashboard is a place for you to view events that you're attending and meetups that you've created or joined.</p>
+						<br/>
+						<br/>
+						<br/>
+						<p>Need to change your account information?<br/><br/> Manage your account by <a href="/users/edit">clicking here</a>.</p>
 					</div>
 					{eventStatus}
 				</div>

@@ -38,8 +38,14 @@ body {
 	.dashboard {
 		.user-greeting {
 			color: white;
-			background-color: black;
-			border-right: 1px solid black;
+			background-color: #666;
+			border-right: 1px solid #007bff;
+			a {
+				color: #4da3ff;
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 	}
 	#footer {
@@ -70,16 +76,21 @@ body {
 #landing-background {
 	height: 652px;
 	color: #fff;
-	text-shadow: 2px 2px black;
 	text-align: center;
 	padding-top: 390px;
 	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/crowdpic.jpg");
 	background-size: 100% auto;
 	background-repeat: no-repeat;
+	h2 {
+		text-shadow: 2px 2px black;
+	}
 }
 
 .card-deck {
 	width: 100%;
+	a:hover {
+		text-decoration: none;
+	}
 	
 	.card {
 		width: 275px;
@@ -120,44 +131,39 @@ body {
 	}
 
 	.event-selector {
+		.cities {
+			p {
+				margin-top: 90px;
+				font-size: 3rem;
+				text-shadow: 2px 2px black;
+			}
+			cursor: pointer;
+			color: #fff;
+			height: 300px;
+			.san-francisco-pic {
+				background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/friscoimage.jpeg");
+				background-size: cover;
+				opacity: 0.75;
+				&:hover {
+				opacity: 1;
+				border: 1px inset #007bff;
+				}
+			}
 			
-			.cities {
-				p {
-					margin-top: 90px;
-					font-size: 3rem;
-					text-shadow: 2px 2px black;
-				}
-				cursor: pointer;
-				color: #fff;
-				height: 300px;
-				.san-francisco-pic {
-					background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/friscoimage.jpeg");
-					background-size: cover;
-					opacity: 0.75;
-					&:hover {
-					opacity: 1;
-					border: 1px inset black;
-					}
-				}
-				
-				.los-angeles-pic {
-					background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/losangelesimage.jpeg");
-					background-size: cover;
-					opacity: 0.75;
-					&:hover {
-					opacity: 1;
-					border: 1px inset black;
-					}
+			.los-angeles-pic {
+				background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/losangelesimage.jpeg");
+				background-size: cover;
+				opacity: 0.75;
+				&:hover {
+				opacity: 1;
+				border: 1px inset #007bff;
 				}
 			}
-
-			a:hover {
-				text-decoration: none;
-			}
-			.fa-angle-down {
-				padding-bottom: 0px;
-	    	margin-top: -50px;
-			}
+		}
+		.fa-angle-down {
+			padding-bottom: 0px;
+    	margin-top: -50px;
+		}
 	}
 }
 .hunnit {
@@ -232,12 +238,7 @@ body {
 	
 	.meetup-info {
 		min-height: 250px;
-		.meetup-list {
-			height: 50px;
-			.col {
-				border: 1px solid black;
-			}
-		}
+		
 	}
 	.meetup-modal {
 		text-align: center;
@@ -258,7 +259,7 @@ body {
 #footer {
 	border-top: 1px solid #007bff;
 	color: white;
-	background-color: black;
+	background-color: #404040;
 	.meetup-link {
 		border-bottom: 1px solid white;
 		margin: 0px;

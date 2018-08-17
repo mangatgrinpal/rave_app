@@ -12,14 +12,12 @@ class Meetup extends React.Component {
 
 	render () {
 		return (
-			<div className="row meetup-list">
-				<div className="col">
-					<a onClick={this.handleClick} href="javascript:void(0)">{this.props.meetup.name}</a>
+			<a onClick={this.handleClick} href="javascript:void(0)">
+				<div className="d-flex w-100 justify-content-between">
+					<h5 className="mb-1">{this.props.meetup.name}</h5>
+					<small>{this.props.meetup.user.username}</small>
 				</div>
-				<div className="col">
-					{this.props.meetup.user.username}
-				</div>
-			</div>
+			</a>
 		)
 	}
 }
