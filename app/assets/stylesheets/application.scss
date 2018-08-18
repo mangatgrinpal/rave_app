@@ -34,7 +34,7 @@ body {
 
 
 .static_pages {
-	
+
 	.dashboard {
 		.user-greeting {
 			color: white;
@@ -146,7 +146,7 @@ body {
 				opacity: 0.75;
 				&:hover {
 				opacity: 1;
-				border: 1px inset #007bff;
+				border: 1px solid #007bff;
 				}
 			}
 			
@@ -156,7 +156,7 @@ body {
 				opacity: 0.75;
 				&:hover {
 				opacity: 1;
-				border: 1px inset #007bff;
+				border: 1px solid #007bff;
 				}
 			}
 		}

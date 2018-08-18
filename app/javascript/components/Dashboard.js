@@ -62,7 +62,7 @@ class Dashboard extends React.Component {
 				</div>
 			)
 		}
-		if (time > 12) {
+		if (17 > time > 12) {
 			return ( 
 				<div>
 				Good afternoon
