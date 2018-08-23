@@ -6,7 +6,7 @@ class EventShow extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isHidden: true
+			isHidden: false
 		}
 		this.toggleHidden = this.toggleHidden.bind(this)
 	}

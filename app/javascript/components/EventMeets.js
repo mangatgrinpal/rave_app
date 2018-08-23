@@ -28,7 +28,9 @@ class EventMeets extends React.Component {
 		var meetups = this.state.meetups.map ((meetup) => {
 			return (
 				<div className="list-group-item list-group-item-action flex-column align-items-start" key={meetup.id}>
-					<Meetup meetupIndexUrl={this.props.meetupIndexUrl} meetup={meetup} setCurrentlySelectedMeetup={this.setCurrentlySelectedMeetup}/>
+					<Meetup meetupIndexUrl={this.props.meetupIndexUrl} 
+									meetup={meetup} 
+									setCurrentlySelectedMeetup={this.setCurrentlySelectedMeetup}/>
 				</div>
 			)
 		})
@@ -37,7 +39,9 @@ class EventMeets extends React.Component {
 				<div className="list-group-item bg-light flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h4 className="mb-1">Meetup Name</h4>
-						<h4 className="mb-1">Creator</h4>
+						<div><small>Creator
+						&ensp;
+						<i className="fa fa-1x fa-users"/></small></div>
 					</div>
 				</div>
 				{meetups}
@@ -49,7 +53,7 @@ class EventMeets extends React.Component {
 		var attendees = this.state.currentlySelectedMeetup.users.map ((attendee, index)=> {
 			return (
 				<div key={index}>
-					<a href="javascript:void(0)">{attendee.username}</a>
+					{attendee.username}
 				</div>
 			)
 		})
@@ -74,15 +78,6 @@ class EventMeets extends React.Component {
 	}
 
 	
-	currentUserAttendanceId() {
-		var currentUserId = this.props.currentUser.id
-		var attending = this.state.currentlySelectedMeetup.attendances.filter( attendance => attendance.user_id == currentUserId)
-		console.log(attending[0]["id"])
-		
-	}
-
-
-
 	leaveMeetup() {
 		var self = this;
 		$.ajax(this.makeAjaxDeleteLink(), {
@@ -113,11 +108,15 @@ class EventMeets extends React.Component {
 		return result 
 	}
 
-
+	
 	toggleMeetupStatus () {
+		if(this.state.currentlySelectedMeetup.creator.id == this.props.currentUser.id) {
+		return (<div/>)	
+		}
 		if (this.alreadyJoinedMeetup()) {
 		return (<button onClick={this.leaveMeetup} className="btn btn-primary">Leave Meetup</button>)
-		} else {
+		}
+		 else {
 			return (<button onClick={this.joinMeetup} className="btn btn-primary">Join Meetup</button>)
 		}
 	}
@@ -143,7 +142,9 @@ class EventMeets extends React.Component {
 								{this.state.currentlySelectedMeetup.description}
 							</div>
 							<div className="col-3">
+								{this.state.currentlySelectedMeetup.creator.username}
 								{this.meetupAttendees()}
+								
 							</div>
 						</div>
 					</div>
