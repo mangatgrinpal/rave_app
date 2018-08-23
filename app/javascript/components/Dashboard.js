@@ -80,7 +80,7 @@ class Dashboard extends React.Component {
 
 	render () {
 		var eventStatus;
-		if (this.props.userEvents.length === 0) {
+		if (true) {
 			eventStatus =
 			<div className="col-9">
 				<br/>
@@ -98,12 +98,12 @@ class Dashboard extends React.Component {
 						<h3>Events</h3>
 					</div>
 					<br/>
-					{this.userEvents()}
+					
 				</div>
 				<div className="col-9">
 					<h3>Meetups</h3>
 					<br/>
-					{this.userMeetups()}
+					
 				</div>
 					<br/>
 			</div>

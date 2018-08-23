@@ -9,7 +9,6 @@ class EventsController < ApplicationController
 
 	def show
 		@meetups = ActiveModel::Serializer::CollectionSerializer.new(@event.meetups, each_serializer: MeetupSerializer)
-		
 	end
 
 	def new
@@ -48,4 +47,5 @@ class EventsController < ApplicationController
 	def event_params
 		params.require(:event).permit(:name, :location, :date, :venue)
 	end
+
 end

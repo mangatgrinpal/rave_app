@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_creator: false
+  user_id: 1
+  meetup_id: 1
+
+two:
+  is_creator: false
+  user_id: 1
+  meetup_id: 1

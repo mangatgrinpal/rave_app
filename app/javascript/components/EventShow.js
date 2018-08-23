@@ -65,7 +65,8 @@ class EventShow extends React.Component {
 				</div>
 				{this.state.isHidden && <EventMeets meetups={this.props.meetups}
 																						meetupIndexUrl={this.props.meetupIndexUrl}
-																						isLoggedIn={this.props.isLoggedIn}/>}
+																						isLoggedIn={this.props.isLoggedIn}
+																						currentUser={this.props.currentUser}/>}
 				<br/>
 				{this.state.isHidden && <EventMap event={this.props.event}/>}
 			</div>

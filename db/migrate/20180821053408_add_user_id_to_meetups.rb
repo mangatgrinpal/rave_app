@@ -1,6 +1,5 @@
 class AddUserIdToMeetups < ActiveRecord::Migration[5.2]
   def change
-    add_column :meetups, :user_id, :integer
-    add_index :meetups, :user_id
+  	add_column :meetups, :creator_id, :integer
   end
 end

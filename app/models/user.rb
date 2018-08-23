@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-	has_many :meetups
+	has_many :attendances
+	has_many :meetups, through: :attendances
+	has_many :created_meetups, foreign_key: "creator_id", class_name: "Meetup"
+
 	has_many :events, through: :meetups
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -15,7 +15,7 @@ class Meetup extends React.Component {
 			<a onClick={this.handleClick} href="javascript:void(0)">
 				<div className="d-flex w-100 justify-content-between">
 					<h5 className="mb-1">{this.props.meetup.name}</h5>
-					<small>{this.props.meetup.user.username}</small>
+					<small>{this.props.meetup.creator.username}</small>
 				</div>
 			</a>
 		)
