@@ -84,7 +84,6 @@ class EventMeets extends React.Component {
 			dataType: "JSON",
 			type: "DELETE",
 			success: (data)=> {
-
 				self.setState({meetups: data.meetups, currentlySelectedMeetup: data.currentlySelectedMeetup })
 			}
 		});
@@ -92,8 +91,8 @@ class EventMeets extends React.Component {
 
 	makeAjaxDeleteLink() {
 		var currentUserId = this.props.currentUser.id
-		var attending = this.state.currentlySelectedMeetup.attendances.filter( attendance => attendance.user_id == currentUserId)[0].id
-		return ("/meetups/"+ this.state.currentlySelectedMeetup.id +"/attendances/"+ attending)
+		var attending = this.state.currentlySelectedMeetup.attendances.filter( attendance => attendance.user_id == currentUserId)
+		return ("/meetups/"+ this.state.currentlySelectedMeetup.id +"/attendances/"+ attending[0].id)
 	}
 
 	alreadyJoinedMeetup() {
@@ -114,10 +113,10 @@ class EventMeets extends React.Component {
 		return (<div/>)	
 		}
 		if (this.alreadyJoinedMeetup()) {
-		return (<button onClick={this.leaveMeetup} className="btn btn-primary">Leave Meetup</button>)
+		return (<button onClick={this.leaveMeetup} className="btn btn-primary join-leave">Leave Meetup</button>)
 		}
 		 else {
-			return (<button onClick={this.joinMeetup} className="btn btn-primary">Join Meetup</button>)
+			return (<button onClick={this.joinMeetup} className="btn btn-primary join-leave">Join Meetup</button>)
 		}
 	}
 

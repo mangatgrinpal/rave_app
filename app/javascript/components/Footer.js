@@ -22,7 +22,7 @@ class Footer extends React.Component {
 	}
 
 	render () {
-		console.log(this.props)
+		
 		return (
 			<div id="footer" className="container-fluid">
 				<br/>
