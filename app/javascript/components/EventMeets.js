@@ -85,7 +85,7 @@ class EventMeets extends React.Component {
 
 	leaveMeetup() {
 		var self = this;
-		$.ajax("/meetups/"+ self.state.currentlySelectedMeetup.id +"/attendances/"+ self.state.currentlySelectedMeetup.attendances.filter( attendance => attendance.user_id == self.props.currentUser.id)[0]["id"], {
+		$.ajax(this.makeAjaxDeleteLink(), {
 			dataType: "JSON",
 			type: "DELETE",
 			success: (data)=> {
@@ -95,19 +95,27 @@ class EventMeets extends React.Component {
 		});
 	}
 
+	makeAjaxDeleteLink() {
+		var currentUserId = this.props.currentUser.id
+		var attending = this.state.currentlySelectedMeetup.attendances.filter( attendance => attendance.user_id == currentUserId)[0].id
+		return ("/meetups/"+ this.state.currentlySelectedMeetup.id +"/attendances/"+ attending)
+	}
+
 	alreadyJoinedMeetup() {
 		var currentUserId = this.props.currentUser.id
+		var result = false
 		this.state.currentlySelectedMeetup.users.forEach((user)=> {
-			if (user.id == currentUserId) {
-				return true
+			if (user.id === currentUserId) {
+				result = true
+				return
 			}		 
 		})
-		return false
+		return result 
 	}
 
 
 	toggleMeetupStatus () {
-		if (this.state.currentlySelectedMeetup.users.map((n)=> {return(n.id)}).includes(this.props.currentUser.id)) {
+		if (this.alreadyJoinedMeetup()) {
 		return (<button onClick={this.leaveMeetup} className="btn btn-primary">Leave Meetup</button>)
 		} else {
 			return (<button onClick={this.joinMeetup} className="btn btn-primary">Join Meetup</button>)
