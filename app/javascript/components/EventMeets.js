@@ -173,11 +173,11 @@ class EventMeets extends React.Component {
 
 			text = "Meetups at this event"
 			badMeetupsText = "Don't see any that you like?"
-			startNewMeetupText = "Start your own."
+			startNewMeetupText = "Start your own"
 		}
 		else {
 			text = "No Meetups at this event"
-			startNewMeetupText = "Start one now."
+			startNewMeetupText = "Start one now"
 		}
 
 		return (

@@ -11,6 +11,7 @@ class Dashboard extends React.Component {
 	}
 
 	userEvents() {
+		
 		var userEvent = this.props.userEvents.map ((event)=> {
 			return (
 				<div className="center-text" key={event.id} >
@@ -51,6 +52,27 @@ class Dashboard extends React.Component {
 		)
 	}
 
+	userCreatedMeetups() {
+		var userCreatedMeetup = this.props.createdMeetups.map ((meetup)=> {
+			return (	
+				<div className="list-group-item list-group-item-action flex-column align-items-start" key={meetup.id}>
+					<div className="d-flex w-50 justify-content-between">
+						<h4>{meetup.name}</h4>
+					</div>
+					<p className="mb-1">
+						{meetup.description}
+					</p>
+				</div>
+			)
+		})
+
+		return (
+			<div className="list-group">
+				{userCreatedMeetup}
+			</div>
+		)
+	}
+
 	userGreeting () {
 		var d = new Date();
 		var time = d.getHours();
@@ -80,7 +102,7 @@ class Dashboard extends React.Component {
 
 	render () {
 		var eventStatus;
-		if (true) {
+		if (this.props.userEvents.length == 0) {
 			eventStatus =
 			<div className="col-9">
 				<br/>
@@ -98,12 +120,18 @@ class Dashboard extends React.Component {
 						<h3>Events</h3>
 					</div>
 					<br/>
-					
+					{this.userEvents()}
 				</div>
 				<div className="col-9">
-					<h3>Meetups</h3>
+					<h3>Meetups you've joined</h3>
 					<br/>
-					
+					{this.userMeetups()}
+				</div>
+				<div className="col-9">
+					<br/>
+					<h3>Meetups you've created</h3>
+					<br/>
+					{this.userCreatedMeetups()}
 				</div>
 					<br/>
 			</div>

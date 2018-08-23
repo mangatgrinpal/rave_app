@@ -5,15 +5,29 @@ class Footer extends React.Component {
 		super(props);
 	}
 
+	toggleSignUp () {
+		if (this.props.currentUser == null) {
+			return (
+				<div className="col offset-1 sign-up">
+					<a href="/users/sign_up">Sign up today</a>
+					<br/>
+				</div>)
+		} else {
+			return (
+				<div>
+
+					<br/>
+				</div>)
+		}
+	}
+
 	render () {
+		console.log(this.props)
 		return (
 			<div id="footer" className="container-fluid">
 				<br/>
 				<div className="row meetup-link">
-					<div className="col offset-1 sign-up">
-						<a href="/users/sign_up">Sign up today</a>
-					<br/>
-					</div>
+					{this.toggleSignUp()}
 				</div>
 				<div className="row account-links">
 					<div className="col-2 offset-1">

@@ -5,7 +5,10 @@ class StaticPagesController < ApplicationController
 	end
 
 	def dashboard
-		@user = current_user
+		@user = current_user 
+		@meetups = ActiveModel::Serializer::CollectionSerializer.new(@user.meetups, each_serializer: MeetupSerializer)
+		@createdMeetups = ActiveModel::Serializer::CollectionSerializer.new(@user.created_meetups, each_serializer: MeetupSerializer)
+		@userEvents = @user.events.uniq
 		
 	end
 
