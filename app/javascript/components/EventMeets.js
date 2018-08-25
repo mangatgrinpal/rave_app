@@ -9,6 +9,7 @@ class EventMeets extends React.Component {
 		this.setCurrentlySelectedMeetup = this.setCurrentlySelectedMeetup.bind(this)
 		this.joinMeetup = this.joinMeetup.bind(this)
 		this.leaveMeetup = this.leaveMeetup.bind(this)
+		this.deleteMeetup = this.deleteMeetup.bind(this)
 		this.state = {
 			meetups: this.props.meetups,
 			currentlySelectedMeetup: null
@@ -107,22 +108,20 @@ class EventMeets extends React.Component {
 		return result 
 	}
 
-	
 	toggleMeetupStatus () {
+		if (this.props.currentUser == null) {
+			return (<div/>)
+		}
 		if(this.state.currentlySelectedMeetup.creator.id == this.props.currentUser.id) {
-		return (<div/>)	
+			return (<button onClick={this.deleteMeetup} className="btn btn-primary join-leave">Delete Meetup</button>)	
 		}
 		if (this.alreadyJoinedMeetup()) {
-		return (<button onClick={this.leaveMeetup} className="btn btn-primary join-leave">Leave Meetup</button>)
+			return (<button onClick={this.leaveMeetup} className="btn btn-primary join-leave">Leave Meetup</button>)
 		}
 		 else {
 			return (<button onClick={this.joinMeetup} className="btn btn-primary join-leave">Join Meetup</button>)
 		}
 	}
-
-
-
-
 
 	meetupDescription () {
 		if (this.state.currentlySelectedMeetup) {
@@ -151,6 +150,17 @@ class EventMeets extends React.Component {
 
 			)
 		}
+	}
+
+	deleteMeetup() {
+		var self = this;
+		$.ajax ("/meetups/" + self.state.currentlySelectedMeetup.id, {
+				dataType:"JSON",
+				method: "DELETE",
+				success: (data)=> {
+					self.setState({currentlySelectedMeetup: null, meetups: data.meetups })
+				}
+		})
 	}
 
 	
@@ -195,11 +205,14 @@ class EventMeets extends React.Component {
 				<div className="meetup-modal">
 					{badMeetupsText}
 					<br/>
-						<button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#meetupModal">{startNewMeetupText}</button>
+						<button type="button" 
+										className="btn btn-outline-primary" 
+										data-toggle="modal" 
+										data-target="#meetupModal">{startNewMeetupText}</button>
 					</div>
-				<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl} 
-										updateMeetupsState={this.updateMeetupsState}
-										isLoggedIn={this.props.isLoggedIn}/>
+				<MeetupModal meetupIndexUrl={this.props.meetupIndexUrl}
+											updateMeetupsState={this.updateMeetupsState}
+											isLoggedIn={this.props.isLoggedIn}/>
 					<br/>
 					<br/>
 			</div>

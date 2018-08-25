@@ -17,9 +17,11 @@ class MeetupsController < ApplicationController
 		end
 	end
 
-	def show
-		
-
+	def destroy
+		@meetup = Meetup.find(params[:id])
+		@meetups = Meetup.find(params[:id]).event.meetups
+		@meetup.destroy
+		render json: {currentlySelectedMeetup: ActiveModelSerializers::SerializableResource.new(@meetup), meetups: ActiveModelSerializers::SerializableResource.new(@meetups)}
 	end
 
 	private
