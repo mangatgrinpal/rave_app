@@ -154,6 +154,7 @@ class EventMeets extends React.Component {
 
 	deleteMeetup() {
 		var self = this;
+		confirm("Are you sure?")
 		$.ajax ("/meetups/" + self.state.currentlySelectedMeetup.id, {
 				dataType:"JSON",
 				method: "DELETE",
@@ -203,6 +204,7 @@ class EventMeets extends React.Component {
 				</div>
 				{stuff}
 				<div className="meetup-modal">
+					<br/>
 					{badMeetupsText}
 					<br/>
 						<button type="button" 

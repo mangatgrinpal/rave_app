@@ -131,6 +131,9 @@ body {
 	}
 
 	.event-selector {
+		h3 {
+			padding: 50px 0px;
+		}
 		.cities {
 			p {
 				margin-top: 90px;
@@ -161,7 +164,7 @@ body {
 			}
 		}
 		.fa-angle-down {
-			padding-bottom: 0px;
+			padding-bottom: 20px;
     	margin-top: -50px;
 		}
 	}

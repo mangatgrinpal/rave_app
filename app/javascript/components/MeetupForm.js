@@ -35,6 +35,7 @@ class MeetupForm extends React.Component {
 				success: (data)=> {
 					self.props.updateMeetupsState(data)
 					$('#meetupModal').modal('toggle');
+					self.setState({name: '', description: ''})
 				},error: ()=> {
 						if (self.props.isLoggedIn) {
 							alert("Please enter a name.")
@@ -51,7 +52,7 @@ class MeetupForm extends React.Component {
 			<div>
 				<div className="modal-body">
 	        <div>
-						<form>
+						<form id="meetup-form">
 			        <label>
 			        	Name:<br/> 
 			        	<input 
