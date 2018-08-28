@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-	has_many :attendances
-	has_many :meetups, through: :attendances
-	has_many :created_meetups, foreign_key: "creator_id", class_name: "Meetup"
+	has_many :attendances, dependent: :destroy
+	has_many :meetups, through: :attendances, dependent: :destroy
+	has_many :created_meetups, foreign_key: "creator_id", class_name: "Meetup", dependent: :destroy
 
 	has_many :events, through: :meetups
   # Include default devise modules. Others available are:

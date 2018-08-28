@@ -154,14 +154,17 @@ class EventMeets extends React.Component {
 
 	deleteMeetup() {
 		var self = this;
-		confirm("Are you sure?")
-		$.ajax ("/meetups/" + self.state.currentlySelectedMeetup.id, {
+		var answer = confirm("Are you sure?");
+		if (answer == true) {
+			$.ajax ("/meetups/" + self.state.currentlySelectedMeetup.id, {
 				dataType:"JSON",
 				method: "DELETE",
 				success: (data)=> {
 					self.setState({currentlySelectedMeetup: null, meetups: data.meetups })
 				}
 		})
+		} 
+		
 	}
 
 	

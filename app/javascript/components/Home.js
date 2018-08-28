@@ -34,7 +34,7 @@ class Home extends React.Component {
 				<div className="row center-text ravemeet-description">
 					<div className="col-10">
 						<h3>How does it work?</h3>
-						<p>Anyone can organize a meetup, and you can choose to make it open or private. Meet new people or unite with your friends.</p>
+						<p>Anyone can organize a meetup, then other users can choose to join instantly.</p>
 						<i className="fa fa-4x fa-street-view"/>
 					</div>
 				</div>

@@ -21,12 +21,16 @@ class Dashboard extends React.Component {
 				</div>
 			)
 		})
-
-		return (
+		if (this.props.userEvents == null) { 
+			return (
+				<div/>
+			)
+		} else {
+			return (
 			<div className="card-deck">
 				{userEvent}
 			</div>
-		)
+		)}
 	}
 
 
@@ -44,12 +48,20 @@ class Dashboard extends React.Component {
 				</div>
 			)
 		})
-
-		return (
-			<div className="list-group">
-				{userMeetup}
-			</div>
-		)
+		if (this.props.userMeetups.length == 0) {
+			return (
+				<div/>
+			)} else {
+				return (
+					<div>
+						<h3>Meetups you've joined</h3>
+							<br/>
+						<div className="list-group">
+							{userMeetup}
+						</div>
+					</div>
+			)
+			}
 	}
 
 	userCreatedMeetups() {
@@ -65,12 +77,22 @@ class Dashboard extends React.Component {
 				</div>
 			)
 		})
+		if (this.props.createdMeetups.length == 0) {
+			return (
+				<div/>
+			)} else {
+				return (
+					<div>
+					<br/>
+					<h3>Meetups you've created</h3>
+					<br/>
+						<div className="list-group">
 
-		return (
-			<div className="list-group">
-				{userCreatedMeetup}
-			</div>
-		)
+							{userCreatedMeetup}
+						</div>
+					</div>
+			)
+			}
 	}
 
 	userGreeting () {
@@ -123,14 +145,10 @@ class Dashboard extends React.Component {
 					{this.userEvents()}
 				</div>
 				<div className="col-9">
-					<h3>Meetups you've joined</h3>
-					<br/>
+					
 					{this.userMeetups()}
 				</div>
 				<div className="col-9">
-					<br/>
-					<h3>Meetups you've created</h3>
-					<br/>
 					{this.userCreatedMeetups()}
 				</div>
 					<br/>
@@ -143,7 +161,7 @@ class Dashboard extends React.Component {
 				<div className="row">
 					<div className="col-3 user-greeting">
 						<br/>
-						<h3>{this.userGreeting()} {this.state.user.username},</h3>
+						<h3>{this.userGreeting()}{this.state.user.username},</h3>
 						<p>your dashboard is a place for you to view events that you're attending and meetups that you've created or joined.</p>
 						<br/>
 						<br/>
