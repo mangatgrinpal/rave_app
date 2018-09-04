@@ -15,7 +15,6 @@ class Dashboard extends React.Component {
 		var userEvent = this.props.userEvents.map ((event)=> {
 			return (
 				<div className="center-text" key={event.id} >
-
 					<Event event={event} eventIndexUrl={this.props.eventIndexUrl}/>
 					<br/>
 				</div>
@@ -51,7 +50,8 @@ class Dashboard extends React.Component {
 		if (this.props.userMeetups.length == 0) {
 			return (
 				<div/>
-			)} else {
+			)
+		} else {
 				return (
 					<div>
 						<h3>Meetups you've joined</h3>
@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
 							{userMeetup}
 						</div>
 					</div>
-			)
+				)
 			}
 	}
 
@@ -96,7 +96,7 @@ class Dashboard extends React.Component {
 	}
 
 	userGreeting () {
-		var d = new Date();
+		var d = new Date()
 		var time = d.getHours();
 
 		if (time < 12) {
@@ -161,7 +161,8 @@ class Dashboard extends React.Component {
 				<div className="row">
 					<div className="col-3 user-greeting">
 						<br/>
-						<h3>{this.userGreeting()}{this.state.user.username},</h3>
+						<h3>{this.userGreeting()}
+						{this.state.user.username},</h3>
 						<p>your dashboard is a place for you to view events that you're attending and meetups that you've created or joined.</p>
 						<br/>
 						<br/>

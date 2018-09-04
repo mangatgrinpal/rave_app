@@ -7,6 +7,7 @@
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
 
   %body{class: controller.controller_name}
     - flash.each do |name, msg|
@@ -14,10 +15,8 @@
         %button.close{ :data => { :dismiss => "alert"} } x
         = msg
 
-    <!-- application.html.erb -->
     = javascript_pack_tag 'application'
- 
-
+    
     = react_component("Nav", {isLoggedIn:user_signed_in?, currentUser:current_user, rootPath:root_path, eventIndexUrl:events_path})
     = yield
     = react_component("Footer",{currentUser:current_user})

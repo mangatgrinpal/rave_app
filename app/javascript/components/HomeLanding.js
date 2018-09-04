@@ -18,7 +18,7 @@ class HomeLanding extends React.Component {
 				<div>
 					<h2>Locate friendly groups at your favorite events
 					<br/>Sign up today!</h2>
-					<a className="btn btn-primary" href="/users/sign_up">Sign Up</a>
+					<a className="btn btn-sm btn-primary" href="/users/sign_up">Sign Up</a>
 				</div>
 		}
 		return (

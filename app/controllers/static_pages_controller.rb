@@ -3,14 +3,14 @@ class StaticPagesController < ApplicationController
 	
 
 	def home
-		@events = Event.where(location: "San Francisco").first(3)
+		@events = Event.where(location: "sanFrancisco").first(3)
 	end
 
 	def dashboard
 		@user = current_user
 		@meetups = ActiveModel::Serializer::CollectionSerializer.new(@user.meetups, each_serializer: MeetupSerializer)
 		@createdMeetups = ActiveModel::Serializer::CollectionSerializer.new(@user.created_meetups, each_serializer: MeetupSerializer)
-		@userEvents = (@user.events.uniq + user_created_meetup_events).uniq
+		@userEvents = (@user.events + user_created_meetup_events).uniq.sort_by &:date
 		
 	end
 
@@ -18,6 +18,6 @@ class StaticPagesController < ApplicationController
 
 	def user_created_meetup_events
 		@user = current_user
-		@user.created_meetups.map {|x| x.event }
+		Event.joins(:meetups).where("meetups.creator_id = ?", @user.id)
 	end
 end

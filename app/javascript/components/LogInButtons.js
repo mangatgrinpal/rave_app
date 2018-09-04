@@ -32,7 +32,7 @@ class LogInButtons extends React.Component {
 		
 		if (this.props.isLoggedIn) {
 			return (
-				<div>
+				<div className="btn-group btn-group-sm">
 					<button onClick={this.goDashboard} className="btn btn-outline-primary">Dashboard</button>
 					<button onClick={this.logOut} className="btn btn-outline-primary">Log Out</button>
 				</div>
@@ -40,7 +40,7 @@ class LogInButtons extends React.Component {
 		}
 		else {
 			return (
-				<div>
+				<div className="btn-group btn-group-sm">
 					<a className="btn btn-outline-primary" href="/users/sign_up">Sign Up</a>
 				  <a className="btn btn-outline-primary" href="/users/sign_in">Log In</a>
 				</div>

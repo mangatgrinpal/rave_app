@@ -40,7 +40,7 @@ class EventMeets extends React.Component {
 				<div className="list-group-item bg-light flex-column align-items-start">
 					<div className="d-flex w-100 justify-content-between">
 						<h4 className="mb-1">Meetup Name</h4>
-						<div><small>Creator
+						<div><small className="pr-1">Creator
 						&ensp;
 						<i className="fa fa-1x fa-users"/></small></div>
 					</div>
@@ -139,7 +139,7 @@ class EventMeets extends React.Component {
 							<div className="col-9">
 								{this.state.currentlySelectedMeetup.description}
 							</div>
-							<div className="col-3">
+							<div className="col-3 text-right">
 								{this.state.currentlySelectedMeetup.creator.username}
 								{this.meetupAttendees()}
 								

@@ -57,7 +57,7 @@ class EventList extends React.Component {
 		})
 	}
 
-	goBack () {
+	goBack() {
 		this.setState({ isHidden: !this.state.isHidden, page: 1 })
 	}
 

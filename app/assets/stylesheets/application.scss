@@ -80,6 +80,7 @@ body {
 	padding-top: 390px;
 	background-image: url("https://s3-us-west-1.amazonaws.com/ginnysbucket/dev-images/crowdpic.jpg");
 	background-size: 100% auto;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	h2 {
 		text-shadow: 2px 2px black;
@@ -149,7 +150,6 @@ body {
 				opacity: 0.75;
 				&:hover {
 				opacity: 1;
-				border: 1px solid #007bff;
 				}
 			}
 			
@@ -159,7 +159,6 @@ body {
 				opacity: 0.75;
 				&:hover {
 				opacity: 1;
-				border: 1px solid #007bff;
 				}
 			}
 		}

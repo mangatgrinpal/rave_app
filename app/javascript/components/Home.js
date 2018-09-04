@@ -8,6 +8,9 @@ class Home extends React.Component {
 		super(props);
 	}
 
+	fadeDescription(){
+	}
+
 	
 	render() {
 		
@@ -24,7 +27,7 @@ class Home extends React.Component {
 					</div>
 				</div>
 				<div id="instructions" className="row center-text">
-					<div className="col-10">
+					<div className="col-10 what-is-ravemeet">
 						<h3>What is RaveMeet?</h3>
 						<p>RaveMeet allows you to explore popular events in the San Francisco and Los Angeles areas
 						and organize meetups.</p>
