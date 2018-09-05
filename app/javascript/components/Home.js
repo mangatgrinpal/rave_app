@@ -9,7 +9,9 @@ class Home extends React.Component {
 	}
 
 	fadeDescription(){
+	
 	}
+	
 
 	
 	render() {
@@ -41,8 +43,6 @@ class Home extends React.Component {
 						<i className="fa fa-4x fa-street-view"/>
 					</div>
 				</div>
-				
-				
 			</div>
 		)
 	};
