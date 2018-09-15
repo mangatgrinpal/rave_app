@@ -10,6 +10,33 @@ class Dashboard extends React.Component {
 		}
 	}
 
+	userGreeting () {
+		var d = new Date();
+		var time = d.getHours();
+
+		if (time <= 12) {
+			return ( 
+				<div>
+					<span>Good morning</span>
+				</div>
+			)
+		}
+		if (17 > time > 12) {
+			return ( 
+				<div>
+					<span>Good afternoon</span>
+				</div>
+			)
+		}
+		if (time >= 17) {
+			return ( 
+				<div>
+					<span>Good evening</span>
+				</div>
+			)
+		}
+	}
+
 	userEvents() {
 		
 		var userEvent = this.props.userEvents.map ((event)=> {
@@ -95,32 +122,7 @@ class Dashboard extends React.Component {
 			}
 	}
 
-	userGreeting () {
-		var d = new Date()
-		var time = d.getHours();
-
-		if (time < 12) {
-			return ( 
-				<div>
-				Good morning
-				</div>
-			)
-		}
-		if (17 > time > 12) {
-			return ( 
-				<div>
-				Good afternoon
-				</div>
-			)
-		}
-		if (time > 17) {
-			return ( 
-				<div>
-				Good evening
-				</div>
-			)
-		}
-	}
+	
 
 	render () {
 		var eventStatus;
