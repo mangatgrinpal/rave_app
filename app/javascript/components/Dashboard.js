@@ -14,14 +14,14 @@ class Dashboard extends React.Component {
 		var d = new Date();
 		var time = d.getHours();
 
-		if (time <= 12) {
+		if (time < 12) {
 			return ( 
 				<div>
 					<span>Good morning</span>
 				</div>
 			)
 		}
-		if (17 > time > 12) {
+		if (17 > time >= 12) {
 			return ( 
 				<div>
 					<span>Good afternoon</span>

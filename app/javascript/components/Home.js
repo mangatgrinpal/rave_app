@@ -8,8 +8,15 @@ class Home extends React.Component {
 		super(props);
 	}
 
-	fadeDescription(){
-	
+	componentDidMount() {
+		$(window).scroll(()=> {
+			if ($(window).scrollTop() > 495) {
+				$(".what-is-ravemeet").fadeIn(1000);
+			}
+			if ($(window).scrollTop() > 1011) {
+				$(".ravemeet-description").fadeIn(1000);
+			}
+		})
 	}
 	
 
@@ -36,8 +43,8 @@ class Home extends React.Component {
 						<i className="fa fa-3x fa-users"/>
 					</div>
 				</div>
-				<div className="row center-text ravemeet-description">
-					<div className="col-10">
+				<div id="description" className="row center-text">
+					<div className="col-10 ravemeet-description">
 						<h3>How does it work?</h3>
 						<p>Anyone can organize a meetup, then other users can choose to join instantly.</p>
 						<i className="fa fa-4x fa-street-view"/>
