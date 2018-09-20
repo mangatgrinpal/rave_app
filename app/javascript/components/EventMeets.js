@@ -162,9 +162,8 @@ class EventMeets extends React.Component {
 				success: (data)=> {
 					self.setState({currentlySelectedMeetup: null, meetups: data.meetups })
 				}
-		})
-		} 
-		
+			})
+		}
 	}
 
 	
@@ -211,7 +210,7 @@ class EventMeets extends React.Component {
 					{badMeetupsText}
 					<br/>
 						<button type="button" 
-										className="btn btn-outline-primary" 
+										className="btn btn-outline-primary btn-sm" 
 										data-toggle="modal" 
 										data-target="#meetupModal">{startNewMeetupText}</button>
 					</div>

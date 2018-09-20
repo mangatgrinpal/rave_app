@@ -12,8 +12,9 @@ class EventList extends React.Component {
 			events: this.props.events,
 			page: 1,
 			showMore: true,
-			location: '',
-			isHidden: false
+			location: 'sanFrancisco',
+			isHidden: true,
+			laEvents: this.props.laEvents
 		}
 	}
 
@@ -62,7 +63,7 @@ class EventList extends React.Component {
 	}
 
 	changeLocation(evt) {
-		$(this.setState({location: evt.target.id, page: 0, isHidden: !this.state.isHidden}, ()=>{this.getMoreEvents()}))
+		this.setState({location: evt.target.id, page: 1, isHidden: !this.state.isHidden},()=>this.getMoreEvents())
 	}
 
 	camelCaseToString() {
@@ -74,14 +75,14 @@ class EventList extends React.Component {
 	}
 
 
-	render () {
+	render() {
 
 		return (
 	
 				<div className="center">
 					<div className="row">
 						<div className="col-12 event-selector">
-							{!this.state.isHidden && 
+							{this.state.isHidden && 
 							<div> 
 							<h3>Choose a city to get started</h3>
 							<br/>
@@ -94,7 +95,7 @@ class EventList extends React.Component {
 								</div>
 							</div>
 							</div>}
-							{this.state.isHidden && 
+							{!this.state.isHidden && 
 							<div>
 							<h3>Upcoming events in {this.camelCaseToString()}</h3>
 							<button className="btn btn-primary" onClick={this.goBack}>Start Over</button>

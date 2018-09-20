@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
 	
 
 	def home
-		@events = Event.where(location: "sanFrancisco").first(3)
+		@events = Event.where(location: 'sanFrancisco').first(3)
+		@laEvents = Event.where(location: 'losAngeles').first(3)
 	end
 
 	def dashboard

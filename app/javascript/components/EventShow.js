@@ -5,17 +5,11 @@ import EventMeets from "./EventMeets"
 class EventShow extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			isHidden: true
-		}
-		this.toggleHidden = this.toggleHidden.bind(this)
 	}
+		
+	
 
-	toggleHidden () {
-		this.setState ({
-			isHidden: !this.state.isHidden
-		})
-	}
+	
 	camelCaseToString() {
 		var x = this.props.event.location
 		return (
@@ -23,6 +17,7 @@ class EventShow extends React.Component {
 		.replace(/^./, function(str){ return str.toUpperCase(); })
 		)
 	}
+
 
 	render () {
 
@@ -60,15 +55,13 @@ class EventShow extends React.Component {
 					</div>
 				</div>
 				<br/>
-				<div className="center">
-					{!this.state.isHidden && <button onClick={this.toggleHidden} className="btn btn-outline-primary">Check to see who's meeting up at this event</button>}
-				</div>
-				{this.state.isHidden && <EventMeets meetups={this.props.meetups}
+				
+				<EventMeets meetups={this.props.meetups}
 																						meetupIndexUrl={this.props.meetupIndexUrl}
 																						isLoggedIn={this.props.isLoggedIn}
-																						currentUser={this.props.currentUser}/>}
+																						currentUser={this.props.currentUser}/>
 				<br/>
-				{this.state.isHidden && <EventMap event={this.props.event}/>}
+				<EventMap event={this.props.event}/>
 			</div>
 		)
 	};

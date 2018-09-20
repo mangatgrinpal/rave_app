@@ -70,7 +70,7 @@ html {
 
 .global-nav {
 	border-bottom: 1px solid #007bff;
-	height: 80px;
+	height: 60px;
 }
 
 #landing-background {
@@ -179,6 +179,9 @@ html {
 }
 
 .meetup-list {
+	a:hover {
+		text-decoration: none;
+	}
 	.join-leave {
 		margin-top: -5px;
 		padding: 0px 5px;

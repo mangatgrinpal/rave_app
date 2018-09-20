@@ -31,7 +31,8 @@ class Home extends React.Component {
 					<br/>
 						<EventList key={event.id} 
 										events={this.props.events} 
-										eventIndexUrl={this.props.eventIndexUrl}/>
+										eventIndexUrl={this.props.eventIndexUrl}
+										laEvents={this.props.laEvents}/>
 					<br/>
 					</div>
 				</div>
