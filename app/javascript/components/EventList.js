@@ -59,11 +59,11 @@ class EventList extends React.Component {
 	}
 
 	goBack() {
-		this.setState({ isHidden: !this.state.isHidden, page: 1 })
+		this.setState({ isHidden: !this.state.isHidden, page: 0 })
 	}
 
 	changeLocation(evt) {
-		this.setState({location: evt.target.id, page: 1, isHidden: !this.state.isHidden},()=>this.getMoreEvents())
+		this.setState({location: evt.target.id, page: 0, isHidden: !this.state.isHidden},()=>this.getMoreEvents())
 	}
 
 	camelCaseToString() {
@@ -87,10 +87,10 @@ class EventList extends React.Component {
 							<h3>Choose a city to get started</h3>
 							<br/>
 							<div className="row cities">
-								<div onClick={this.changeLocation} id="sanFrancisco" className="col-7 san-francisco-pic">
+								<div onClick={this.changeLocation} id="sanFrancisco" className="col-6 san-francisco-pic">
 									<p id="sanFrancisco">San Francisco</p>
 								</div>
-								<div onClick={this.changeLocation} id="losAngeles" className="col-5 los-angeles-pic">
+								<div onClick={this.changeLocation} id="losAngeles" className="col-6 los-angeles-pic">
 									<p id="losAngeles">Los Angeles</p>
 								</div>
 							</div>
