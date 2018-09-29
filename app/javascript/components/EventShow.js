@@ -20,6 +20,15 @@ class EventShow extends React.Component {
 
 
 	render () {
+		var endDate;
+		if (this.props.endMonthDate == null) {
+			endDate =
+			<div/>
+		}
+		else {
+			endDate =
+			<span>-{this.props.endMonthDate}</span>
+		}
 
 		return (
 			<div className="container-fluid event">
@@ -31,7 +40,7 @@ class EventShow extends React.Component {
 							<div className="card-body" style={{backgroundImage: "url(" + this.props.event.poster + ")"}}>
 								<div className="card-title date">
 									<div className="center">
-										<h5>{this.props.monthDate}</h5>
+										<h5>{this.props.monthDate} {endDate}</h5>
 										<h5>{this.props.year}</h5>
 									</div>
 								</div>
