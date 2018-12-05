@@ -3,18 +3,18 @@ import React from "react"
 class EventMap extends React.Component {
 	constructor(props) {
 		super(props);
-		// this.mousePos = this.mousePos.bind(this)
+		this.mousePos = this.mousePos.bind(this)
 		this.state = { x:0, y: 0};
 	}
 
-	// mousePos(evt) {
-	// 	const position = 
-	// 	this.refs.elem.getBoundingClientRect();
+	mousePos(evt) {
+		const position = 
+		this.refs.elem.getBoundingClientRect();
 
-	// 	this.setState({x:evt.nativeEvent.offsetX, y:evt.nativeEvent.offsetY});
-	// 	$('#meetupModal').modal('toggle');
+		this.setState({x:evt.nativeEvent.offsetX, y:evt.nativeEvent.offsetY});
+		$('#meetupModal').modal('toggle');
 		
-	// }
+	}
 
 	render () {
 		const {x,y} = this.state;

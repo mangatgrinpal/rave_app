@@ -27,7 +27,7 @@ class EventShow extends React.Component {
 		}
 		else {
 			endDate =
-			<span>-{this.props.endMonthDate}</span>
+			<span>- {this.props.endMonthDate}</span>
 		}
 
 		return (

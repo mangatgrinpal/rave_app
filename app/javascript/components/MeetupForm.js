@@ -7,6 +7,7 @@ class MeetupForm extends React.Component {
 		this.state = {
 			name: '',
 			description: ''
+			
 		};
 
 		this.handleInputChange = this.handleInputChange.bind(this);
